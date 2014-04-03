@@ -3,6 +3,7 @@
     "roles": {},
     "bootstrap-3": {},
     "accounts-admin-ui-bootstrap-3": {},
-    "iron-router": {}
+    "iron-router": {},
+    "jade": {}
   }
 }

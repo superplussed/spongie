@@ -1,0 +1,8 @@
+template(name='admin')
+  +header
+
+  #main
+    if isAdmin
+      +accountsAdmin
+    else
+      | This is a restricted page

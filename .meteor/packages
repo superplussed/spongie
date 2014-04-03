@@ -12,3 +12,6 @@ bootstrap-3
 accounts-admin-ui-bootstrap-3
 iron-router
 coffeescript
+stylus
+underscore
+jade
