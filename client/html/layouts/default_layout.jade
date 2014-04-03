@@ -1,7 +1,8 @@
-template(name="default_layout")
-  header
-    a.logo(href='/') Techmasters
-    ul.login-buttons
-      +loginButtons
+template(name="defaultLayout")
+  head
+    title Techmasters
 
-  +yield
+  body
+    +header
+    #main
+      +yield
