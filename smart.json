@@ -6,6 +6,7 @@
     "iron-router": {},
     "jade": {},
     "collection2": {},
-    "minimongoid": {}
+    "minimongoid": {},
+    "accounts-entry": {}
   }
 }
