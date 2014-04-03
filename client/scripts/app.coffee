@@ -1,6 +1,6 @@
-Meteor.subscribe("classes")
-Meteor.subscribe("components")
-Meteor.subscribe("modules")
+Meteor.subscribe("Classes")
+Meteor.subscribe("Components")
+Meteor.subscribe("Modules")
 
 isAdmin = ->
   Roles.userIsInRole(Meteor.user(), ['admin'])

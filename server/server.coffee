@@ -1,3 +1,12 @@
+Meteor.publish "Classes", ->
+  return Classes.find()
+
+Meteor.publish "Modules", ->
+  return Modules.find()
+
+Meteor.publish "Components", ->
+  return Components.find()
+
 Classes.allow
   insert: ->
     true
@@ -5,7 +14,6 @@ Classes.allow
     true
   remove: ->
     true
-  fetch: []
 
 Modules.allow
   insert: ->
@@ -14,7 +22,6 @@ Modules.allow
     true
   remove: ->
     true
-  fetch: []
 
 Components.allow
   insert: ->
@@ -23,4 +30,3 @@ Components.allow
     true
   remove: ->
     true
-  fetch: []
