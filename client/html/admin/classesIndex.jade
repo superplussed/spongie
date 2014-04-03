@@ -1,5 +1,13 @@
 template(name="classesIndex")
   h3 Classes 
-  ul
-    each classes
-      li=name
+  table.table
+    thead
+      tr
+        th
+        th Name
+    tbody
+      each classes
+        tr
+          td
+            i.fa.fa-times
+          td=name
