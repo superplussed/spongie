@@ -12,6 +12,9 @@ Router.map ->
   @route "terms",
     path: "/terms"
 
+  @route "dashboard",
+    path: "/dashboard"
+
   @route "admin",
     path: "/admin"
     onBeforeAction: ->
