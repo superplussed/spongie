@@ -11,10 +11,7 @@ Router.map ->
 
   @route "terms",
     path: "/terms"
-
-  @route "dashboard",
-    path: "/dashboard"
-
+    
   @route "admin",
     path: "/admin"
     onBeforeAction: ->
@@ -23,3 +20,12 @@ Router.map ->
 
   @route "adminRoles",
     path: "/admin/roles"
+
+  @route "classesIndex",
+    path: "/admin/class"
+    data: 
+      classes: ->
+        Classes.find().fetch()
+
+  @route "classesCreate",
+    path: "/admin/class/create"

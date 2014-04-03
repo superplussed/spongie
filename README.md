@@ -16,3 +16,4 @@
 * https://www.eventedmind.com/feed/meteor-ironrouter
 * https://github.com/aldeed/meteor-autoform
 * https://atmospherejs.com/package/collection2
+* https://github.com/aldeed/meteor-autoform-example

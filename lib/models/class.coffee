@@ -1,4 +1,4 @@
-Books = new Meteor.Collection("classes",
+@Classes = new Meteor.Collection("classes",
   schema: new SimpleSchema(
     name:
       type: String
@@ -8,5 +8,8 @@ Books = new Meteor.Collection("classes",
       type: String
       label: "Location"
       max: 100
+    description:
+      type: String
+      label: "Description"
   )
 )

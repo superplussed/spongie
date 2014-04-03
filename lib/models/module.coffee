@@ -1,4 +1,4 @@
-Books = new Meteor.Collection("modules",
+@Modules = new Meteor.Collection("modules",
   schema: new SimpleSchema(
     name:
       type: String

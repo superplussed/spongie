@@ -3,6 +3,6 @@ Meteor.startup ->
     privacyUrl: '/privacy'
     termsUrl: '/terms'
     homeRoute: '/'
-    dashboardRoute: '/dashboard'
+    dashboardRoute: '/'
     profileRoute: 'profile'
     passwordSignupFields: 'USERNAME_AND_EMAIL'
