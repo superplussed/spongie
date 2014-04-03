@@ -4,6 +4,8 @@
     "bootstrap-3": {},
     "accounts-admin-ui-bootstrap-3": {},
     "iron-router": {},
-    "jade": {}
+    "jade": {},
+    "collection2": {},
+    "minimongoid": {}
   }
 }

@@ -1,9 +1,7 @@
 ###packages to add
 
-* https://atmospherejs.com/package/minimongoid
 * https://atmospherejs.com/package/accounts-entry
 * https://atmospherejs.com/package/iron-router-progress
-* https://atmospherejs.com/package/collection2
 
 ###Possible domains 
 
@@ -15,3 +13,5 @@
 ###Info/Docs
 
 * https://www.eventedmind.com/feed/meteor-ironrouter
+* https://github.com/aldeed/meteor-autoform
+* https://atmospherejs.com/package/collection2

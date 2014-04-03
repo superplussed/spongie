@@ -6,7 +6,9 @@
       "bootstrap-3": {},
       "accounts-admin-ui-bootstrap-3": {},
       "iron-router": {},
-      "jade": {}
+      "jade": {},
+      "collection2": {},
+      "minimongoid": {}
     },
     "packages": {
       "roles": {
@@ -21,8 +23,8 @@
       },
       "accounts-admin-ui-bootstrap-3": {
         "git": "https://github.com/hharnisc/meteor-accounts-admin-ui-bootstrap-3.git",
-        "tag": "v0.2.4",
-        "commit": "64e74a088f01d03362e3758d7ddbffe229b1437c"
+        "tag": "v0.2.5",
+        "commit": "381d4ca347f16d2ca2e1e6ca5f51c3f2e9c6c5cd"
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
@@ -34,10 +36,30 @@
         "tag": "v0.2.1",
         "commit": "969fc3dd0adbb15304e3e13c3e27260398d89503"
       },
+      "collection2": {
+        "git": "https://github.com/aldeed/meteor-collection2.git",
+        "tag": "v0.3.11",
+        "commit": "7e970671305657678e8508d8107d5e6c5e158559"
+      },
+      "minimongoid": {
+        "git": "https://github.com/Exygy/minimongoid.git",
+        "tag": "v0.8.3",
+        "commit": "8a4849426f1775f9886f303067e50877696fae43"
+      },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
         "tag": "v0.2.2",
         "commit": "8bc53798fe5965669ae67c72f91829fcfdceabfd"
+      },
+      "simple-schema": {
+        "git": "https://github.com/aldeed/meteor-simple-schema.git",
+        "tag": "v0.2.45",
+        "commit": "27a5a943a70a7376c90f18d2e2a4a122c6fc73fb"
+      },
+      "underscore-string-latest": {
+        "git": "https://github.com/TimHeckel/meteor-underscore-string.git",
+        "tag": "v2.3.3",
+        "commit": "4a5d70eee48fbd90a6e6fc78747250d704a0b3bb"
       }
     }
   }
