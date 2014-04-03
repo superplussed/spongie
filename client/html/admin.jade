@@ -2,7 +2,8 @@ template(name='admin')
   +header
 
   #main
-    if isAdmin
-      +accountsAdmin
-    else
-      | This is a restricted page
+    #admin 
+      h1 Admin
+      ul
+        li
+          a(href="/admin/roles") User Roles

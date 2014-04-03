@@ -7,3 +7,6 @@ Router.map ->
     # onBeforeAction: ->
       # if !Roles.userIsInRole(Meteor.user(), ['admin'])
       #   @redirect('/')
+
+  @route "adminRoles",
+    path: "/admin/roles"
