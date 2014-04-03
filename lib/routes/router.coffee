@@ -6,6 +6,12 @@ Router.map ->
   @route "home",
     path: "/"
 
+  @route "privacy",
+    path: "/privacy"
+
+  @route "terms",
+    path: "/terms"
+
   @route "admin",
     path: "/admin"
     onBeforeAction: ->
