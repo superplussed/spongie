@@ -1,5 +1,9 @@
 template(name="header")
+
   header
     a.logo(href='/') Techmasters
-    ul.login-buttons
+    
+    if showAdminLink
+      a.nav-link(href='/admin') Admin
+    .login-buttons 
       +loginButtons
