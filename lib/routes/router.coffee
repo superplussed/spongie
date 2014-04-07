@@ -1,5 +1,5 @@
 Router.configure
-  notFoundTemplate: 'notFound' 
+  # notFoundTemplate: 'notFound' 
   layoutTemplate: 'defaultLayout'
 
 Router.map ->
