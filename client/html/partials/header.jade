@@ -1,6 +1,9 @@
 template(name="header")
   header
-    a.logo(href='/') SPONGIE
+    a.logo(href='/')
+      img(src="/images/brain.png")
+    a.logo.spongie(href='/')
+      | SPONGIE
     
     if userSignedIn
       .dropdown.user-dropdown

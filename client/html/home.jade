@@ -1,2 +1,7 @@
 template(name="home")
-  | home
+  h3 Classes
+  ul.classes
+    each unjoinedClasses
+      li 
+        .name {{name}}
+        .join.btn.btn-default Join 

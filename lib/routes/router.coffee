@@ -5,6 +5,9 @@ Router.configure
 Router.map ->
   @route "home",
     path: "/"
+    data: 
+      unjoinedClasses: ->
+        Classes.find().fetch()
 
   @route "privacy",
     path: "/privacy"
