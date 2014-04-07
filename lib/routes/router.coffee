@@ -14,6 +14,11 @@ Router.map ->
 
   @route "terms",
     path: "/terms"
+
+  @route "class",
+    path: "/class/:id",
+    data: ->
+      Classes.findOne(this.params._id)
     
   @route "admin",
     path: "/admin"

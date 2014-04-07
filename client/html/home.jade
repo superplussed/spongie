@@ -5,8 +5,14 @@ template(name="home")
       li 
         .name {{name}}
         if userHasJoinedClass
-          .enter.btn.btn-default Enter
-          .leave.btn.btn-default Leave
+          a.enter.btn.btn-default(href="/class/{{_id}}")
+            i.fa.fa-download
+            | Enter
+          .leave.btn.btn-default 
+            i.fa.fa-times
+            | Withdraw
         else
-          .join.btn.btn-default Join 
+          .join.btn.btn-default 
+            i.fa.fa-download
+            | Enroll
 
