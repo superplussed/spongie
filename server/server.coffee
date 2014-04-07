@@ -7,7 +7,18 @@ Meteor.publish "Modules", ->
 Meteor.publish "Components", ->
   return Components.find()
 
+Meteor.publish "UserClass", ->
+  return UserClass.find()
+
 Classes.allow
+  insert: ->
+    true
+  update: ->
+    true
+  remove: ->
+    true
+
+UserClass.allow
   insert: ->
     true
   update: ->

@@ -1,6 +1,7 @@
 Meteor.subscribe("Classes")
 Meteor.subscribe("Components")
 Meteor.subscribe("Modules")
+Meteor.subscribe("UserClass")
 
 isAdmin = ->
   Roles.userIsInRole(Meteor.user(), ['admin'])
@@ -19,3 +20,6 @@ Handlebars.registerHelper 'showAdminLink', ->
 
 Handlebars.registerHelper 'username', ->
   Meteor.user()?.username
+
+Handlebars.registerHelper 'userHasJoinedClass', ->
+  UserClass.userHasJoined(Meteor.userId(), this._id)

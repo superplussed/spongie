@@ -4,4 +4,9 @@ template(name="home")
     each unjoinedClasses
       li 
         .name {{name}}
-        .join.btn.btn-default Join 
+        if userHasJoinedClass
+          .enter.btn.btn-default Enter
+          .leave.btn.btn-default Leave
+        else
+          .join.btn.btn-default Join 
+
