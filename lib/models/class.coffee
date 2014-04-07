@@ -13,5 +13,9 @@
       type: String
       label: "Description"
       optional: true
+    creator_id: 
+      type: String
+      label: "Creator"
+      optional: true
   )
 )
