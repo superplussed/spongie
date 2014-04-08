@@ -1,0 +1,28 @@
+template(name="moduleIndex")
+  .index
+    h3
+      | Modules
+      a(href="{{pathFor 'moduleNew'}}", class="create-module create-button btn btn-default btn-sm")
+        i.fa.fa-plus
+        | Create Module
+
+    ul
+      each availableModules
+        li
+          .name
+            i.fa.fa-level-up.fa-rotate-90
+            {{name}}
+
+          .buttons
+            a(href="{{pathFor 'moduleShow' id=this._id}}", class="show-module btn btn-default btn-sm")
+              i.fa.fa-download
+              | View
+
+            if createdByMe
+              a(href="{{pathFor 'moduleUpdate' id=this._id}}", class="edit-module btn btn-default btn-sm")
+                i.fa.fa-pencil
+                | Edit
+
+              .delete-module.btn.btn-default.btn-sm 
+                i.fa.fa-times
+                | Delete

@@ -1,0 +1,9 @@
+template(name="moduleNew")
+  +autoForm collection="Module" id="moduleForm" type="insert"
+    fieldset
+      legend Create a Module
+      +afQuickField name='name'
+      +afFieldInput name='creatorId' type='hidden' value=currentUserId
+    
+    button.btn.btn-default.create-module(type="submit") Create Module
+        

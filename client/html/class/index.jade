@@ -1,34 +1,40 @@
 template(name="classIndex")
-  h3 Classes
-  ul.classes
-    each availableClasses
-      li 
-        .name {{name}}
-        if joinedClass
-          a(href="{{pathFor 'classShow' id=this._id}}", class="show-class btn btn-default btn-sm")
-            i.fa.fa-download
-            | Enter
+  .index
+    h3 
+      | Classes
+      a(href="{{pathFor 'classNew'}}", class="create-class btn btn-default btn-sm")
+        i.fa.fa-plus
+        | Create Class
 
-          unless createdByMe
-            .leave.btn.btn-default.btn-sm 
-              i.fa.fa-times
-              | Withdraw
+    ul
+      each availableClasses
+        li 
+          .name 
+            i.fa.fa-level-up.fa-rotate-90
+            {{name}}
+            
+          .buttons
+            if joinedClass
+              a(href="{{pathFor 'classShow' id=this._id}}", class="show-class btn btn-default btn-sm")
+                i.fa.fa-download
+                | Enter
 
-        else
-          .join.btn.btn-default.btn-sm 
-            i.fa.fa-download
-            | Enroll
+              unless createdByMe
+                .leave.btn.btn-default.btn-sm 
+                  i.fa.fa-times
+                  | Withdraw
 
-        if createdByMe
-          a(href="{{pathFor 'classUpdate' id=this._id}}", class="edit-class btn btn-default btn-sm")
-            i.fa.fa-pencil
-            | Edit Class
+            else
+              .join.btn.btn-default.btn-sm 
+                i.fa.fa-download
+                | Enroll
 
-          .delete-class.btn.btn-default.btn-sm 
-            i.fa.fa-times
-            | Delete Class
+            if createdByMe
+              a(href="{{pathFor 'classUpdate' id=this._id}}", class="edit-class btn btn-default btn-sm")
+                i.fa.fa-pencil
+                | Edit
 
-  a(href="{{pathFor 'classNew'}}", class="create-class btn btn-default btn-sm")
-    i.fa.fa-plus
-    | Create Class
+              .delete-class.btn.btn-default.btn-sm 
+                i.fa.fa-times
+                | Delete
 

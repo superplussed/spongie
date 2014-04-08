@@ -45,8 +45,8 @@ AutoForm.hooks
   classForm:
     after:
       update: (error, result, template) ->
-        Alerts.add('Your class has been updated!', 'info')
+        Alerts.add('Your class has been updated.', 'info')
       insert: (error, result, template) ->
         UserClass.insert({class_id: result, user_id: Meteor.userId()})
-        Alerts.add('Your class has been created!', 'info')
+        Alerts.add('Your class has been created.', 'info')
         Router.go("classUpdate", {id: result})
