@@ -13,7 +13,7 @@
       type: String
       label: "Description"
       optional: true
-    creator_id: 
+    creatorId: 
       type: String
       label: "Creator"
       optional: true

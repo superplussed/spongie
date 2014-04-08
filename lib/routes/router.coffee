@@ -15,8 +15,8 @@ Router.map ->
   @route "terms",
     path: "/terms"
 
-  @route "classCreate",
-    path: "/class/create"
+  @route "classNew",
+    path: "/class/new"
 
   @route "class",
     path: "/class/:id",

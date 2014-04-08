@@ -1,20 +1,2 @@
 template(name="home")
-  h3 Classes
-  ul.classes
-    each unjoinedClasses
-      li 
-        .name {{name}}
-        if userHasJoinedClass
-          a.enter.btn.btn-default(href="/class/{{_id}}")
-            i.fa.fa-download
-            | Enter
-          .leave.btn.btn-default 
-            i.fa.fa-times
-            | Withdraw
-        else
-          .join.btn.btn-default 
-            i.fa.fa-download
-            | Enroll
-
-  a.create-class.btn.btn-default Create Class
-
+  +classIndex

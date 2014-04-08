@@ -21,5 +21,11 @@ Handlebars.registerHelper 'showAdminLink', ->
 Handlebars.registerHelper 'username', ->
   Meteor.user()?.username
 
+Handlebars.registerHelper 'currentUserId', ->
+  Meteor.user()?._id
+
+Handlebars.registerHelper 'createdByMe', ->
+  this.creatorId == Meteor.user()?._id
+
 Handlebars.registerHelper 'userHasJoinedClass', ->
   UserClass.userHasJoined(Meteor.userId(), this._id)
