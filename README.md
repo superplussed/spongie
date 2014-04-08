@@ -9,7 +9,6 @@
 * uprisemind.com
 * mindrisen.org
 * upmind.org
-* spunge.net
 * sprung.io
 * spong.io
 * braina.de
@@ -36,3 +35,5 @@ cd workspace
 meteor create --example todos 
 cd todos
 meteor
+
+Web Development for designers and artists

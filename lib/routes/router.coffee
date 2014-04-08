@@ -18,8 +18,14 @@ Router.map ->
   @route "classNew",
     path: "/class/new"
 
-  @route "class",
+  @route "classShow",
     path: "/class/:id",
+    data: ->
+      class:
+        Class.findOne(this.params.id)
+
+  @route "classUpdate",
+    path: "/class/update/:id",
     data: ->
       class:
         Class.findOne(this.params.id)

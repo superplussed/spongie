@@ -9,6 +9,7 @@
     "minimongoid": {},
     "accounts-entry": {},
     "autoform": {},
-    "font-awesome": {}
+    "font-awesome": {},
+    "simple-bootstrap3-alerts": {}
   }
 }

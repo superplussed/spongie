@@ -1,0 +1,10 @@
+template(name="classUpdate")
+  +autoForm collection="Class" id="classUpdateForm" type="update"
+    fieldset
+      legend Update a Class
+      +afQuickField name='name' value=class.name
+      +afQuickField name='location' value=class.location
+      +afQuickField name='description' rows=10 value=class.description
+    
+    button.btn.btn-default.create-class(type="submit") Update Class
+        

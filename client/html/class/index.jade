@@ -5,23 +5,29 @@ template(name="classIndex")
       li 
         .name {{name}}
         if userHasJoinedClass
-          a.enter.btn.btn-default(href="/class/{{_id}}")
+          a(href="{{pathFor 'classShow' id=this._id}}", class="show-class btn btn-default btn-sm")
             i.fa.fa-download
             | Enter
 
-          .leave.btn.btn-default 
+          .leave.btn.btn-default.btn-sm 
             i.fa.fa-times
             | Withdraw
+
         else
-          .join.btn.btn-default 
+          .join.btn.btn-default.btn-sm 
             i.fa.fa-download
             | Enroll
+
         if createdByMe
-          .delete-class.btn.btn-default 
+          a(href="{{pathFor 'classUpdate' id=this._id}}", class="edit-class btn btn-default btn-sm")
+            i.fa.fa-pencil
+            | Edit Class
+
+          .delete-class.btn.btn-default.btn-sm 
             i.fa.fa-times
             | Delete Class
 
-  a.create-class.btn.btn-default 
+  a(href="{{pathFor 'classNew'}}", class="create-class btn btn-default btn-sm")
     i.fa.fa-plus
     | Create Class
 
