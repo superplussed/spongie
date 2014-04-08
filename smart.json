@@ -11,6 +11,7 @@
     "autoform": {},
     "font-awesome": {},
     "bootstrap3-wysihtml5": {},
-    "bootstrap-alerts": {}
+    "bootstrap-alerts": {},
+    "ace-embed": {}
   }
 }

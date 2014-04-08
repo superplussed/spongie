@@ -15,6 +15,14 @@ Router.map ->
         Module.findOne(this.params.id)
 
 
+Template.moduleShow.rendered = ->
+  editor = ace.edit("aceEditor")
+  editor.setTheme "ace/theme/twilight"
+  editor.getSession().setMode "ace/mode/xml"
+  editor.setHighlightActiveLine true
+  return
+
+
 Template.moduleIndex.availableModules = ->
   Module.find().fetch()
 
