@@ -2,6 +2,7 @@ Meteor.subscribe("Class")
 Meteor.subscribe("Component")
 Meteor.subscribe("Module")
 Meteor.subscribe("UserClass")
+Meteor.subscribe("UserModule")
 
 isAdmin = ->
   Roles.userIsInRole(Meteor.user(), ['admin'])

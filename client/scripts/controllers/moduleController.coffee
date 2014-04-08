@@ -17,3 +17,18 @@ Router.map ->
 
 Template.moduleIndex.availableModules = ->
   Module.find().fetch()
+
+Template.moduleIndex.events =
+  'click .delete-module': ->
+    Module.remove(this._id)
+    Alerts.add('Your module has been removed.', 'info') 
+
+AutoForm.hooks
+  moduleForm:
+    after:
+      update: (error, result, template) ->
+        Alerts.add('Your module has been updated.', 'info')
+      insert: (error, result, template) ->
+        UserModule.insert({module_id: result, user_id: Meteor.userId()})
+        Alerts.add('Your module has been created.', 'info')
+        Router.go("moduleUpdate", {id: result})

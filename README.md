@@ -38,3 +38,7 @@ cd todos
 meteor
 
 Web Development for designers and artists
+
+* confirm delete
+* html render
+* module pages

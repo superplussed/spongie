@@ -10,6 +10,9 @@ Meteor.publish "Component", ->
 Meteor.publish "UserClass", ->
   return UserClass.find()
 
+Meteor.publish "UserModule", ->
+  return UserModule.find()
+
 Class.allow
   insert: ->
     true
@@ -19,6 +22,14 @@ Class.allow
     true
 
 UserClass.allow
+  insert: ->
+    true
+  update: ->
+    true
+  remove: ->
+    true
+
+UserModule.allow
   insert: ->
     true
   update: ->
