@@ -6,3 +6,6 @@ Template.home.events =
   'click .leave': ->
     userClass = UserClass.findOne({class_id: this._id, user_id: Meteor.userId()})
     UserClass.remove(userClass._id) if userClass._id
+
+  'click .create-class': ->
+    Router.go('classCreate')

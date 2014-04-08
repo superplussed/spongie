@@ -1,4 +1,4 @@
-@Classes = new Meteor.Collection("Classes",
+@Class = new Meteor.Collection("Class",
   schema: new SimpleSchema(
     name:
       type: String
@@ -19,3 +19,4 @@
       optional: true
   )
 )
+

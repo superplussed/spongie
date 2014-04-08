@@ -1,4 +1,4 @@
-@Modules = new Meteor.Collection("Modules",
+@Module = new Meteor.Collection("Module",
   schema: new SimpleSchema(
     name:
       type: String

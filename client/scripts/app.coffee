@@ -1,6 +1,6 @@
-Meteor.subscribe("Classes")
-Meteor.subscribe("Components")
-Meteor.subscribe("Modules")
+Meteor.subscribe("Class")
+Meteor.subscribe("Component")
+Meteor.subscribe("Module")
 Meteor.subscribe("UserClass")
 
 isAdmin = ->

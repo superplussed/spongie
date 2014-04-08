@@ -1,16 +1,16 @@
-Meteor.publish "Classes", ->
-  return Classes.find()
+Meteor.publish "Class", ->
+  return Class.find()
 
-Meteor.publish "Modules", ->
-  return Modules.find()
+Meteor.publish "Module", ->
+  return Module.find()
 
-Meteor.publish "Components", ->
-  return Components.find()
+Meteor.publish "Component", ->
+  return Component.find()
 
 Meteor.publish "UserClass", ->
   return UserClass.find()
 
-Classes.allow
+Class.allow
   insert: ->
     true
   update: ->
@@ -26,7 +26,7 @@ UserClass.allow
   remove: ->
     true
 
-Modules.allow
+Module.allow
   insert: ->
     true
   update: ->
@@ -34,7 +34,7 @@ Modules.allow
   remove: ->
     true
 
-Components.allow
+Component.allow
   insert: ->
     true
   update: ->

@@ -7,7 +7,7 @@ Router.map ->
     path: "/"
     data: 
       unjoinedClasses: ->
-        Classes.find().fetch()
+        Class.find().fetch()
 
   @route "privacy",
     path: "/privacy"
@@ -15,11 +15,15 @@ Router.map ->
   @route "terms",
     path: "/terms"
 
+  @route "classCreate",
+    path: "/class/create"
+
   @route "class",
     path: "/class/:id",
     data: ->
       class:
-        Classes.findOne(this.params.id)
+        Class.findOne(this.params.id)
+
     
   @route "admin",
     path: "/admin"
@@ -34,7 +38,7 @@ Router.map ->
     path: "/admin/class"
     data: 
       classes: ->
-        Classes.find().fetch()
+        Class.find().fetch()
 
   @route "classesCreate",
     path: "/admin/class/create"

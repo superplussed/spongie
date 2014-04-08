@@ -1,2 +1,10 @@
 template(name="classCreate")
-  | create class
+  //- +quickForm collection="Class" id="classesCreateForm" type="insert"
+  +autoForm collection="Class" id="classesCreateForm" type="insert"
+    fieldset
+      legend Set up a Class
+      +afQuickField name='name'
+      +afQuickField name='location'
+      +afQuickField name='description' rows=10
+    button.btn.btn-default.create-class(type="submit") Create Class
+        
