@@ -27,9 +27,8 @@ Router.map ->
   @route "classUpdate",
     path: "/class/update/:id",
     data: ->
-      class:
+      editingDoc:
         Class.findOne(this.params.id)
-
     
   @route "admin",
     path: "/admin"

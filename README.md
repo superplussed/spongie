@@ -2,6 +2,7 @@
 
 * https://atmospherejs.com/package/iron-router-progress
 * https://github.com/mizzao/meteor-sharejs
+* https://github.com/raix/Meteor-handlebar-helpers
 
 ###Possible domains 
 

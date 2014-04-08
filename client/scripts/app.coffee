@@ -27,5 +27,5 @@ Handlebars.registerHelper 'currentUserId', ->
 Handlebars.registerHelper 'createdByMe', ->
   this.creatorId == Meteor.user()?._id
 
-Handlebars.registerHelper 'userHasJoinedClass', ->
+Handlebars.registerHelper 'joinedClass', ->
   UserClass.userHasJoined(Meteor.userId(), this._id)

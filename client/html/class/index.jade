@@ -4,14 +4,15 @@ template(name="classIndex")
     each unjoinedClasses
       li 
         .name {{name}}
-        if userHasJoinedClass
+        if joinedClass
           a(href="{{pathFor 'classShow' id=this._id}}", class="show-class btn btn-default btn-sm")
             i.fa.fa-download
             | Enter
 
-          .leave.btn.btn-default.btn-sm 
-            i.fa.fa-times
-            | Withdraw
+          unless createdByMe
+            .leave.btn.btn-default.btn-sm 
+              i.fa.fa-times
+              | Withdraw
 
         else
           .join.btn.btn-default.btn-sm 
