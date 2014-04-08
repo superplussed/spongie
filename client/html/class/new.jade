@@ -4,7 +4,7 @@ template(name="classNew")
       legend Set up a Class
       +afQuickField name='name'
       +afQuickField name='location'
-      +afQuickField name='description' rows=10
+      +afQuickField name='description' rows=10 class="wysiwyg"
       +afFieldInput name='creatorId' type='hidden' value=currentUserId
     
     button.btn.btn-default.create-class(type="submit") Create Class

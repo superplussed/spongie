@@ -10,6 +10,15 @@ Template.classIndex.events =
   'click .delete-class': ->
     Class.remove(this._id)
 
+
+Template.classNew.rendered = ->
+  $('.wysiwyg').wysihtml5()
+
+
+Template.classUpdate.rendered = ->
+  $('.wysiwyg').wysihtml5()
+
+
 AutoForm.hooks
   classNewForm:
     after:

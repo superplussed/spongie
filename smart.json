@@ -10,6 +10,7 @@
     "accounts-entry": {},
     "autoform": {},
     "font-awesome": {},
-    "simple-bootstrap3-alerts": {}
+    "simple-bootstrap3-alerts": {},
+    "bootstrap3-wysihtml5": {}
   }
 }

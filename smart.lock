@@ -12,7 +12,8 @@
       "accounts-entry": {},
       "autoform": {},
       "font-awesome": {},
-      "simple-bootstrap3-alerts": {}
+      "simple-bootstrap3-alerts": {},
+      "bootstrap3-wysihtml5": {}
     },
     "packages": {
       "roles": {
@@ -69,6 +70,11 @@
         "git": "https://github.com/EtherPOS/simple-bootstrap3-alerts",
         "tag": "v0.0.2",
         "commit": "50b95f3c37964d14fd0dc73e96bfcec52894f41c"
+      },
+      "bootstrap3-wysihtml5": {
+        "git": "https://github.com/andreioprisan/meteor-bootstrap3-wysihtml5.git",
+        "tag": "v0.3.3",
+        "commit": "251d564c3eb5b5b7a89a3e3e63f58633e0816332"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
