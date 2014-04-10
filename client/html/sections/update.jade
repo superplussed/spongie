@@ -2,7 +2,7 @@ template(name="sectionUpdate")
   h3 
     a(href="{{pathFor 'moduleUpdate' id=this.section.moduleId}}")
       {{module.name}}
-    | //
+    i.fa.fa-angle-double-right
     {{section.name}}
 
   section
@@ -15,7 +15,7 @@ template(name="sectionUpdate")
               .name
                 =name
               .buttons
-                a(href="{{pathFor 'sectionUpdate' id=this._id}}", class="btn btn-default btn-sm")
+                a(href="{{pathFor 'exerciseUpdate' id=this._id}}", class="btn btn-default btn-sm")
                   i.fa.fa-pencil.edit-section
                   | Edit
                 .btn.btn-default.btn-sm.delete-exercise

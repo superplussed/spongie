@@ -21,6 +21,9 @@
 * circleofgrowth.org
 * flatlearning.org
 * flatschool.org
+* sharedsponge.com
+* groupsponge.com
+* allsponge
 
 ###Info/Docs
 
@@ -39,7 +42,3 @@ meteor
 Web Development for designers and artists
 
 * confirm delete
-* html render
-* module pages
-
-- module has sections, sections have slides and exercises
