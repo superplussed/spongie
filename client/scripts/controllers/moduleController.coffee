@@ -11,8 +11,10 @@ Router.map ->
   @route "moduleUpdate",
     path: "/module/update/:id",
     data: ->
-      editingDoc:
+      module:
         Module.findOne(this.params.id)
+      sections: 
+        Section.find({moduleId: this.params.id}).fetch()
 
 
 Template.moduleShow.rendered = ->
@@ -31,7 +33,21 @@ Template.moduleIndex.events =
     Module.remove(this._id)
     Alerts.add('Your module has been removed.', 'info') 
 
+Template.moduleUpdate.events =
+  'click .delete-section': ->
+    Section.remove(this._id)
+    Alerts.add('Your section has been removed.', 'info') 
+
 AutoForm.hooks
+  sectionForm:
+    after:
+      insert: (error, result, template) ->
+        if error
+          Alerts.add(error.message , 'info')
+        else
+          section = Section.findOne(result)
+          Alerts.add("Section '" + section.name + "' has been created.", 'info')
+
   moduleForm:
     after:
       update: (error, result, template) ->

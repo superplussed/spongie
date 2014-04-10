@@ -1,6 +1,6 @@
 template(name="moduleUpdate")
   section
-    +autoForm collection="Module" id="moduleForm" type="update" doc=editingDoc
+    +autoForm collection="Module" id="moduleForm" type="update" doc=module
       fieldset
         legend Edit Module Details
         +afQuickField name='name'
@@ -8,7 +8,26 @@ template(name="moduleUpdate")
       button.btn.btn-default.create-module(type="submit") Update Details
 
   section
+    +autoForm collection="Section" id="sectionForm" type="insert" 
+      fieldset
+        legend Add Section 
+        +afQuickField name='name'
+        +afFieldInput name="moduleId" type="hidden" value=module._id
+        +afFieldInput name="creatorId" type="hidden" value=currentUserId
+
+      button.btn.btn-default.create-module(type="submit") Add Section
+
+  section
     fieldset
-      legend Edit Module Sections
+      legend Edit Sections
+      if sections
+        ul
+          each sections
+            li
+              a(href="{{pathFor 'sectionUpdate' id=this._id}}")
+                i.fa.fa-pencil.edit-section
+              i.fa.fa-times.delete-section
+              =name
+
       
           

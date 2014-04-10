@@ -1,0 +1,6 @@
+template(name="sectionUpdate")
+  h3 
+    a(href="{{pathFor 'moduleUpdate' id=this.section.moduleId}}")
+      {{module.name}}
+    | //
+    {{section.name}}

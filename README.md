@@ -22,7 +22,6 @@
 * flatlearning.org
 * flatschool.org
 
-
 ###Info/Docs
 
 * https://www.eventedmind.com/feed/meteor-ironrouter
