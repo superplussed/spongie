@@ -8,6 +8,23 @@ template(name="moduleUpdate")
       button.btn.btn-default.create-module(type="submit") Update Details
 
   section
+    fieldset
+      legend Edit Sections
+      if sections
+        ul.index
+          each sections
+            li
+              .name
+                =name
+              .buttons
+                a(href="{{pathFor 'sectionUpdate' id=this._id}}", class="btn btn-default btn-sm")
+                  i.fa.fa-pencil.edit-section
+                  | Edit
+                .btn.btn-default.btn-sm.delete-section
+                  i.fa.fa-times
+                  | Delete
+                  
+  section
     +autoForm collection="Section" id="sectionForm" type="insert" 
       fieldset
         legend Add Section 
@@ -16,18 +33,3 @@ template(name="moduleUpdate")
         +afFieldInput name="creatorId" type="hidden" value=currentUserId
 
       button.btn.btn-default.create-module(type="submit") Add Section
-
-  section
-    fieldset
-      legend Edit Sections
-      if sections
-        ul
-          each sections
-            li
-              a(href="{{pathFor 'sectionUpdate' id=this._id}}")
-                i.fa.fa-pencil.edit-section
-              i.fa.fa-times.delete-section
-              =name
-
-      
-          
