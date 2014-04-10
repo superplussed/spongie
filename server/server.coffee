@@ -17,7 +17,7 @@ Meteor.publish "Section", ->
   return Section.find()
 
 Meteor.publish "Exercise", ->
-  return Section.find()
+  return Exercise.find()
 
 Exercise.allow
   insert: ->

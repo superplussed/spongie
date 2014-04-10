@@ -4,3 +4,30 @@ template(name="sectionUpdate")
       {{module.name}}
     | //
     {{section.name}}
+
+  section
+    fieldset
+      legend Edit Exercises
+      if exercises
+        ul.index
+          each exercises
+            li
+              .name
+                =name
+              .buttons
+                a(href="{{pathFor 'sectionUpdate' id=this._id}}", class="btn btn-default btn-sm")
+                  i.fa.fa-pencil.edit-section
+                  | Edit
+                .btn.btn-default.btn-sm.delete-exercise
+                  i.fa.fa-times
+                  | Delete
+
+  section
+    +autoForm collection="Exercise" id="exerciseForm" type="insert" 
+      fieldset
+        legend Add Exercise 
+        +afQuickField name='name'
+        +afFieldInput name="sectionId" type="hidden" value=section._id
+        +afFieldInput name="creatorId" type="hidden" value=currentUserId
+
+      button.btn.btn-default.create-module(type="submit") Add Exercise

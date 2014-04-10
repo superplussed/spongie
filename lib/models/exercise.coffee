@@ -7,9 +7,11 @@
     slide:
       type: String
       label: "Slide"
+      optional: true
     code: 
       type: String
       label: "Code"
+      optional: true
     sectionId: 
       type: String
       label: "Section ID"
