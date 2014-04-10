@@ -42,3 +42,5 @@ Web Development for designers and artists
 * confirm delete
 * html render
 * module pages
+
+- module has sections, sections have slides and exercises

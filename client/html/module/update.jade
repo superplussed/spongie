@@ -1,8 +1,14 @@
 template(name="moduleUpdate")
-  +autoForm collection="Module" id="moduleForm" type="update" doc=editingDoc
+  section
+    +autoForm collection="Module" id="moduleForm" type="update" doc=editingDoc
+      fieldset
+        legend Edit Module Details
+        +afQuickField name='name'
+
+      button.btn.btn-default.create-module(type="submit") Update Details
+
+  section
     fieldset
-      legend Update a Module
-      +afQuickField name='name'
-    
-    button.btn.btn-default.create-module(type="submit") Update Module
-        
+      legend Edit Module Sections
+      
+          

@@ -14,7 +14,8 @@
       "font-awesome": {},
       "bootstrap3-wysihtml5": {},
       "bootstrap-alerts": {},
-      "ace-embed": {}
+      "ace-embed": {},
+      "sortable": {}
     },
     "packages": {
       "roles": {
@@ -82,6 +83,11 @@
         "tag": "v0.0.4",
         "commit": "027b0e1b0d06111b51a713f04a8b8750fdcbd289"
       },
+      "sortable": {
+        "git": "https://github.com/fishdude/meteor-sortable.git",
+        "tag": "v0.0.4",
+        "commit": "4e5106793e523d110bd3d11b5bedecc277225e39"
+      },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
         "tag": "v0.2.2",
@@ -89,8 +95,8 @@
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
-        "tag": "v0.2.45",
-        "commit": "27a5a943a70a7376c90f18d2e2a4a122c6fc73fb"
+        "tag": "v0.2.46",
+        "commit": "30b5d3e08433fbbfe49f09845559bf3ca0ab9101"
       },
       "underscore-string-latest": {
         "git": "https://github.com/TimHeckel/meteor-underscore-string.git",

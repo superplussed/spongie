@@ -3,6 +3,8 @@ Meteor.subscribe("Component")
 Meteor.subscribe("Module")
 Meteor.subscribe("UserClass")
 Meteor.subscribe("UserModule")
+Meteor.subscribe("Section")
+Meteor.subscribe("Exercise")
 
 isAdmin = ->
   Roles.userIsInRole(Meteor.user(), ['admin'])

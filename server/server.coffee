@@ -13,6 +13,20 @@ Meteor.publish "UserClass", ->
 Meteor.publish "UserModule", ->
   return UserModule.find()
 
+Meteor.publish "Section", ->
+  return Section.find()
+
+Meteor.publish "Exercise", ->
+  return Section.find()
+
+Exercise.allow
+  insert: ->
+    true
+  update: ->
+    true
+  remove: ->
+    true
+
 Class.allow
   insert: ->
     true
@@ -46,6 +60,14 @@ Module.allow
     true
 
 Component.allow
+  insert: ->
+    true
+  update: ->
+    true
+  remove: ->
+    true
+
+Section.allow
   insert: ->
     true
   update: ->
