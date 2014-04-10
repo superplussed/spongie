@@ -15,3 +15,21 @@ Router.map ->
         _exercise
       section: 
         Section.findOne(_exercise.sectionId) if _exercise
+
+Template.exerciseUpdate.rendered = ->
+  $('.wysiwyg').wysihtml5();
+
+AutoForm.hooks
+  exerciseForm:
+    after:
+      update: (error, result, template) ->
+        if error
+          Alerts.add(error.message , 'info')
+        else
+          Alerts.add("This exercise has been updated.", 'info')
+      insert: (error, result, template) ->
+        if error
+          Alerts.add(error.message , 'info')
+        else
+          exercise = Exercise.findOne(result)
+          Alerts.add("Exercise '" + exercise.name + "' has been created.", 'info')

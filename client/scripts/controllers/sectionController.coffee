@@ -26,11 +26,10 @@ Template.sectionUpdate.events =
 
 
 AutoForm.hooks
-  exerciseForm:
+  sectionForm:
     after:
-      insert: (error, result, template) ->
+      update: (error, result, template) ->
         if error
           Alerts.add(error.message , 'info')
         else
-          exercise = Exercise.findOne(result)
-          Alerts.add("Exercise '" + exercise.name + "' has been created.", 'info')
+          Alerts.add("This section has been updated.", 'info')

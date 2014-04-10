@@ -6,6 +6,14 @@ template(name="sectionUpdate")
     {{section.name}}
 
   section
+    +autoForm collection="Section" id="sectionForm" type="update" doc=section 
+      fieldset
+        legend Edit Section 
+        +afQuickField name='name'
+
+      button.btn.btn-default.create-module(type="submit") Update Section
+
+  section
     fieldset
       legend Edit Exercises
       if exercises

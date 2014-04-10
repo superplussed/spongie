@@ -3,7 +3,7 @@
     name:
       type: String
       label: "Name"
-      max: 40
+      max: 80
     creatorId:
       type: String
       label: "Creator ID"
