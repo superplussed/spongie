@@ -29,12 +29,14 @@ Template.moduleIndex.availableModules = ->
   Module.find().fetch()
 
 Template.moduleIndex.events =
-  'click .confirmed': ->
-    Module.remove(this._id)
+  'click .confirm': ->
+    Module.remove(Session.get("deleteModuleId"))
     Alerts.add('Your module has been removed.', 'info') 
   
   'click .delete-module': (event) ->
-    Confirm.showMessage(event.currentTarget)
+    Session.set('confirm', 'true')
+    Session.set('confirmMessage', 'Are you sure you want to delete this module?')
+    Session.set('deleteModuleId', this._id)
 
 Template.moduleUpdate.events =
   'click .delete-section.confirmed': ->
@@ -42,15 +44,6 @@ Template.moduleUpdate.events =
     Alerts.add('Your section has been removed.', 'info') 
 
 AutoForm.hooks
-  sectionForm:
-    after:
-      insert: (error, result, template) ->
-        if error
-          Alerts.add(error.message , 'info')
-        else
-          section = Section.findOne(result)
-          Alerts.add("Section '" + section.name + "' has been created.", 'info')
-
   moduleForm:
     after:
       update: (error, result, template) ->

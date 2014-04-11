@@ -1,4 +1,6 @@
 template(name="confirmationModal")
   if $.Session.equals "confirm" "true"
-    h1 bla
-  h1 bla
+    #confirm-modal-background
+    #confirm-modal
+      h3 message
+      .confirm.btn.btn-default Confirm

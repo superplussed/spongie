@@ -28,6 +28,13 @@ Template.sectionUpdate.events =
 AutoForm.hooks
   sectionForm:
     after:
+      insert: (error, result, template) ->
+        if error
+          Alerts.add(error.message , 'info')
+        else
+          section = Section.findOne(result)
+          Alerts.add("Section '" + section.name + "' has been created.", 'info')
+          
       update: (error, result, template) ->
         if error
           Alerts.add(error.message , 'info')
