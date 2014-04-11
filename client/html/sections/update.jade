@@ -1,9 +1,7 @@
 template(name="sectionUpdate")
   h3 
-    a(href="{{pathFor 'moduleUpdate' id=this.section.moduleId}}")
-      {{module.name}}
-    i.fa.fa-angle-double-right
-    {{section.name}}
+    a(href="{{pathFor 'moduleUpdate' id=this.section.moduleId}}") {{module.name}}
+    i.fa.fa-angle-double-right {{section.name}}
 
   section
     +autoForm collection="Section" id="sectionForm" type="update" doc=section 

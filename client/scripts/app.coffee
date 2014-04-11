@@ -6,6 +6,9 @@ Meteor.subscribe("UserModule")
 Meteor.subscribe("Section")
 Meteor.subscribe("Exercise")
 
+Helpers.addScope('Session', Session)
+Helpers.addScope('Meteor', Meteor)
+
 isAdmin = ->
   Roles.userIsInRole(Meteor.user(), ['admin'])
 

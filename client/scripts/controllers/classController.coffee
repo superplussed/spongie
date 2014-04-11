@@ -29,17 +29,11 @@ Template.classIndex.events =
     UserClass.remove(userClass._id) if userClass._id
 
   'click .delete-class': ->
-    Class.remove(this._id)
+    
+
+  'click .delete-class-confirm': ->
     Alerts.add('Your class has been removed!', 'info') 
-
-
-Template.classNew.rendered = ->
-  $('.wysiwyg').wysihtml5()
-
-
-Template.classUpdate.rendered = ->
-  $('.wysiwyg').wysihtml5()
-
+    Class.remove(this._id)
 
 AutoForm.hooks
   classForm:

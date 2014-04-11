@@ -29,12 +29,15 @@ Template.moduleIndex.availableModules = ->
   Module.find().fetch()
 
 Template.moduleIndex.events =
-  'click .delete-module': ->
+  'click .confirmed': ->
     Module.remove(this._id)
     Alerts.add('Your module has been removed.', 'info') 
+  
+  'click .delete-module': (event) ->
+    Confirm.showMessage(event.currentTarget)
 
 Template.moduleUpdate.events =
-  'click .delete-section': ->
+  'click .delete-section.confirmed': ->
     Section.remove(this._id)
     Alerts.add('Your section has been removed.', 'info') 
 
