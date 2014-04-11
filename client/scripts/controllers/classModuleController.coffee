@@ -1,6 +1,9 @@
 Router.map ->
   @route "classModuleShow",
     path: "/class/:classId/module/:moduleId",
+    onRun: ->
+      slide = Slide.findOne({moduleId: this.params.moduleId, number: 1})
+      Session.set('currentSlideId', slide?._id) 
     data: ->
       class:
         Class.findOne(this.params.classId)

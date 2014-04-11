@@ -1,6 +1,5 @@
 template(name="moduleIndex")
   .index
-    +confirmModal
     h3
       | Modules
       a(href="{{pathFor 'moduleNew'}}", class="create-module create-button btn btn-default btn-sm")
@@ -11,7 +10,7 @@ template(name="moduleIndex")
       each availableModules
         li
           .name
-            i.fa.fa-level-up.fa-rotate-90 
+            i.fa.fa-level-up.fa-rotate-90
             {{name}}
 
           .buttons
@@ -27,5 +26,3 @@ template(name="moduleIndex")
               .delete-module.btn.btn-default.btn-sm.btn-danger
                 i.fa.fa-times
                 | Delete
-
-
