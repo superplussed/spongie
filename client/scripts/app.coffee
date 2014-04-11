@@ -1,11 +1,8 @@
 Meteor.subscribe("Class")
 Meteor.subscribe("ClassModule")
-Meteor.subscribe("Component")
 Meteor.subscribe("Module")
 Meteor.subscribe("UserClass")
 Meteor.subscribe("UserModule")
-Meteor.subscribe("Section")
-Meteor.subscribe("Exercise")
 Meteor.subscribe("Slide")
 
 Helpers.addScope('Session', Session)

@@ -13,8 +13,6 @@ Router.map ->
     data: ->
       module:
         Module.findOne(this.params.id)
-      sections: 
-        Section.find({moduleId: this.params.id}).fetch()
       slides: 
         Slide.find({moduleId: this.params.id}).fetch()
 
@@ -40,13 +38,6 @@ Template.moduleIndex.events =
     Session.set('confirmModalMessage', 'Are you sure you want to delete this module?')
     Session.set('deleteModuleId', this._id)
 
-Template.moduleUpdate.events =
-  'click .delete-section.confirmed': ->
-    Section.remove(this._id)
-    Alerts.add('Your section has been removed.', 'info') 
-  'click .delete-slide.confirmed': ->
-    Section.remove(this._id)
-    Alerts.add('Your slide has been removed.', 'info') 
 
 AutoForm.hooks
   moduleForm:

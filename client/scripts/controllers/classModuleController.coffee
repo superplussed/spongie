@@ -10,8 +10,6 @@ Router.map ->
         Module.findOne(this.params.moduleId)
       moduleId:
         this.params.moduleId
-      sections:
-        Section.find({moduleId: this.params.moduleId})
 
 AutoForm.hooks
   classModuleForm:
