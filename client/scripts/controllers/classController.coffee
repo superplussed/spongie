@@ -11,6 +11,8 @@ Router.map ->
   @route "classUpdate",
     path: "/class/update/:id",
     data: ->
+      classModules: 
+        ClassModule.find({classId: this.params.id}).fetch()
       editingDoc:
         Class.findOne(this.params.id)
       classId: 
@@ -31,6 +33,9 @@ Template.classJoin.helpers
     UserClass.findOne({class_id: this._id, user_id: Meteor.userId()})
   
 Template.classUpdate.helpers
+  moduleName: ->
+    Module.findOne(this.moduleId)?.name
+
   availableModules: ->
     _.map Module.find().fetch(), (obj) ->
       label: obj.name
@@ -42,6 +47,10 @@ Template.classJoin.events =
     unless UserClass.userHasJoined(Meteor.userId(), this._id)
       Alerts.add('You have joined a class!', 'info')
       UserClass.insert({class_id: this._id, user_id: Meteor.userId()})
+
+Template.classUpdate.events = 
+  'click .delete': ->
+    ClassModule.remove(this._id)
 
 Template.classIndex.events = 
   'click .join': ->

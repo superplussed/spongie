@@ -5,5 +5,5 @@ AutoForm.hooks
         if error
           Alerts.add(error.message , 'info')
         else
-          Alerts.add('Your class has been created.', 'info')
+          Alerts.add('This module has been added.', 'info')
         

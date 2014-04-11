@@ -9,6 +9,23 @@ template(name="classUpdate")
       button.btn.btn-default.create-class(type="submit") Update Class
   
   section
+    fieldset
+      legend Edit Class Modules
+      if classModules
+        ul.index
+          each classModules
+            li
+              .name
+                =moduleName
+              .buttons
+                a(href="{{pathFor 'moduleUpdate' id=this.moduleId}}", class="btn btn-default btn-sm")
+                  i.fa.fa-pencil.edit-section
+                  | Edit
+                .btn.btn-default.btn-sm.btn-danger.delete
+                  i.fa.fa-times
+                  | Delete
+
+  section
     +autoForm collection="ClassModule" id="classModuleForm" type="insert" 
       fieldset
         legend Add a Module
