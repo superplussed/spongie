@@ -9,6 +9,33 @@ template(name="moduleUpdate")
 
   section
     fieldset
+      legend Edit Slides
+      if slides
+        ul.index
+          each slides
+            li
+              .name
+                =name
+              .buttons
+                a(href="{{pathFor 'slideUpdate' id=this._id}}", class="btn btn-default btn-sm")
+                  i.fa.fa-pencil.edit-slide
+                  | Edit
+                .btn.btn-default.btn-sm.delete-slide
+                  i.fa.fa-times
+                  | Delete
+                  
+  section
+    +autoForm collection="Slide" id="slideForm" type="insert" 
+      fieldset
+        legend Add Slide 
+        +afQuickField name='name'
+        +afFieldInput name="moduleId" type="hidden" value=module._id
+        +afFieldInput name="creatorId" type="hidden" value=currentUserId
+
+      button.btn.btn-default.create-module(type="submit") Add Section
+
+  section
+    fieldset
       legend Edit Sections
       if sections
         ul.index

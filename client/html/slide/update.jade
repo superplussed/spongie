@@ -1,0 +1,13 @@
+template(name="slideUpdate")
+  h3 
+    a(href="{{pathFor 'moduleUpdate' id=this.slide.moduleId}}") {{module.name}}
+    i.fa.fa-angle-double-right {{slide.name}}
+
+  section
+    +autoForm collection="Slide" id="slideForm" type="update" doc=slide 
+      fieldset
+        legend Edit Slide 
+        +afQuickField name='name'
+        +afQuickField name='content' rows=30 class='wysiwyg'
+
+      button.btn.btn-default.create-module(type="submit") Update Slide

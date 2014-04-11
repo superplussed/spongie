@@ -1,0 +1,9 @@
+template(name="classModuleShow")
+  a(href="{{pathFor 'classShow' id=classId}}") Return to Class
+
+  h3 {{module.name}}
+
+  if sections
+    ul.sections
+    each sections
+      li=name

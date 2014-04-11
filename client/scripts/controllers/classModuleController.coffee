@@ -4,8 +4,14 @@ Router.map ->
     data: ->
       class:
         Class.findOne(this.params.classId)
+      classId:
+        this.params.classId
       module:
         Module.findOne(this.params.moduleId)
+      moduleId:
+        this.params.moduleId
+      sections:
+        Section.find({moduleId: this.params.moduleId})
 
 AutoForm.hooks
   classModuleForm:

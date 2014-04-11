@@ -22,7 +22,19 @@ Meteor.publish "Exercise", ->
 Meteor.publish "ClassModule", ->
   return ClassModule.find()
 
+Meteor.publish "Slide", ->
+  return Slide.find()
+
+
 Exercise.allow
+  insert: ->
+    true
+  update: ->
+    true
+  remove: ->
+    true
+
+Slide.allow
   insert: ->
     true
   update: ->

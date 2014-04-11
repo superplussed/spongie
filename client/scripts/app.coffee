@@ -6,6 +6,7 @@ Meteor.subscribe("UserClass")
 Meteor.subscribe("UserModule")
 Meteor.subscribe("Section")
 Meteor.subscribe("Exercise")
+Meteor.subscribe("Slide")
 
 Helpers.addScope('Session', Session)
 Helpers.addScope('Meteor', Meteor)
