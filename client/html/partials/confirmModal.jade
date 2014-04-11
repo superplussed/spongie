@@ -1,0 +1,11 @@
+template(name="confirmModal")
+  if $.Session.equals "confirmModal" "true"
+    #confirm-modal-background
+    #confirm-modal
+      h1 {{$.Session.get "confirmModalMessage"}}
+      .confirm.btn.btn-default 
+        i.fa.fa-check
+        | Confirm
+      .cancel.btn.btn-default 
+        i.fa.fa-times
+        | Cancel

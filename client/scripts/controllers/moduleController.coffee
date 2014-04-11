@@ -34,8 +34,8 @@ Template.moduleIndex.events =
     Alerts.add('Your module has been removed.', 'info') 
   
   'click .delete-module': (event) ->
-    Session.set('confirm', 'true')
-    Session.set('confirmMessage', 'Are you sure you want to delete this module?')
+    Session.set('confirmModal', 'true')
+    Session.set('confirmModalMessage', 'Are you sure you want to delete this module?')
     Session.set('deleteModuleId', this._id)
 
 Template.moduleUpdate.events =
