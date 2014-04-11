@@ -1,10 +1,17 @@
 template(name="classUpdate")
-  +autoForm collection="Class" id="classForm" type="update" doc=editingDoc
-    fieldset
-      legend Update a Class
-      +afQuickField name='name' 
-      +afQuickField name='location' 
-      +afQuickField name='description' rows=10 class="wysiwyg"
-    
-    button.btn.btn-default.create-class(type="submit") Update Class
-        
+  section
+    +autoForm collection="Class" id="classForm" type="update" doc=editingDoc
+      fieldset
+        legend Update a Class
+        +afQuickField name='name' 
+        +afQuickField name='location' 
+        +afQuickField name='description' rows=10 class="wysiwyg"
+      button.btn.btn-default.create-class(type="submit") Update Class
+  
+  section
+    +autoForm collection="ClassModule" id="classModuleForm" type="insert" 
+      fieldset
+        legend Add a Module
+        +afFieldInput name='moduleId' options=availableModules select="true"
+        +afFieldInput name='classId' value=classId type='hidden' 
+      button.btn.btn-default.create-class(type="submit") Add Module

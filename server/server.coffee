@@ -19,6 +19,9 @@ Meteor.publish "Section", ->
 Meteor.publish "Exercise", ->
   return Exercise.find()
 
+Meteor.publish "ClassModule", ->
+  return ClassModule.find()
+
 Exercise.allow
   insert: ->
     true
@@ -28,6 +31,14 @@ Exercise.allow
     true
 
 Class.allow
+  insert: ->
+    true
+  update: ->
+    true
+  remove: ->
+    true
+
+ClassModule.allow
   insert: ->
     true
   update: ->

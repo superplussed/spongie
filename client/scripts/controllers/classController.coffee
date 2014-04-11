@@ -13,18 +13,28 @@ Router.map ->
     data: ->
       editingDoc:
         Class.findOne(this.params.id)
+      classId: 
+        this.params.id
 
 
 Template.classIndex.helpers
   availableClasses: ->
     Class.find().fetch()
 
+Template.classUpdate.rendered = ->
+  $('.wysiwyg').wysihtml5();
 
 Template.classJoin.helpers 
   availableClasses: ->
     Class.find().fetch()
   alreadyJoined: ->
     UserClass.findOne({class_id: this._id, user_id: Meteor.userId()})
+  
+Template.classUpdate.helpers
+  availableModules: ->
+    _.map Module.find().fetch(), (obj) ->
+      label: obj.name
+      value: obj._id
 
   
 Template.classJoin.events =

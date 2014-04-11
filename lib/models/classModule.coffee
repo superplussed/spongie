@@ -1,9 +1,9 @@
 @ClassModule = new Meteor.Collection("ClassModule",
   schema: new SimpleSchema(
-    class_id:
+    classId:
       type: String
       label: "Class Id"
-    module_id:
+    moduleId:
       type: String
       label: "Module Id"
   )

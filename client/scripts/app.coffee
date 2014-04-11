@@ -1,4 +1,5 @@
 Meteor.subscribe("Class")
+Meteor.subscribe("ClassModule")
 Meteor.subscribe("Component")
 Meteor.subscribe("Module")
 Meteor.subscribe("UserClass")
