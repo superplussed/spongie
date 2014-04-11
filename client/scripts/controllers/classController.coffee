@@ -7,6 +7,8 @@ Router.map ->
     data: ->
       class:
         Class.findOne(this.params.id)
+      classModules: 
+        ClassModule.find({classId: this.params.id}).fetch()
 
   @route "classUpdate",
     path: "/class/update/:id",
@@ -33,6 +35,10 @@ Template.classJoin.helpers
     UserClass.findOne({class_id: this._id, user_id: Meteor.userId()})
   
 Template.classUpdate.helpers
+  moduleName: ->
+    Module.findOne(this.moduleId)?.name
+
+Template.classShow.helpers
   moduleName: ->
     Module.findOne(this.moduleId)?.name
 

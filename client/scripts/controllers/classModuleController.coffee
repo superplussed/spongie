@@ -1,3 +1,12 @@
+Router.map ->
+  @route "classModuleShow",
+    path: "/class/:classId/module/:moduleId",
+    data: ->
+      class:
+        Class.findOne(this.params.classId)
+      module:
+        Module.findOne(this.params.moduleId)
+
 AutoForm.hooks
   classModuleForm:
     after:
