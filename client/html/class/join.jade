@@ -3,9 +3,14 @@ template(name="classJoin")
     each availableClasses
       .class
         h4=name
-        .buttons
-          if alreadyJoined
-            a.enter.btn.btn-default.btn-small(href="{{pathFor 'classShow' id=this._id}}") Enter
-          else
-            .join.btn.btn-default.btn-small Join
+        if userSignedIn
+          .buttons
+            if alreadyJoined
+              a.enter.btn.btn-default.btn-small(href="{{pathFor 'classShow' id=this._id}}") Enter
+            else
+              .join.btn.btn-default.btn-small Join
 
+        else
+          .help 
+            i.fa.fa-exclamation-triangle
+            | You must sign in to join this class
