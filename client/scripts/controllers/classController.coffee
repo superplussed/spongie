@@ -15,9 +15,23 @@ Router.map ->
         Class.findOne(this.params.id)
 
 
-Template.classIndex.availableClasses = ->
-  Class.find().fetch()
+Template.classIndex.helpers
+  availableClasses: ->
+    Class.find().fetch()
+
+
+Template.classJoin.helpers 
+  availableClasses: ->
+    Class.find().fetch()
+  alreadyJoined: ->
+    UserClass.findOne({class_id: this._id, user_id: Meteor.userId()})
+
   
+Template.classJoin.events =
+  'click .join': ->
+    unless UserClass.userHasJoined(Meteor.userId(), this._id)
+      Alerts.add('You have joined a class!', 'info')
+      UserClass.insert({class_id: this._id, user_id: Meteor.userId()})
 
 Template.classIndex.events = 
   'click .join': ->
@@ -27,11 +41,8 @@ Template.classIndex.events =
   'click .leave': ->
     userClass = UserClass.findOne({class_id: this._id, user_id: Meteor.userId()})
     UserClass.remove(userClass._id) if userClass._id
-
-  'click .delete-class': ->
     
-
-  'click .delete-class-confirm': ->
+  'click .confirm': ->
     Alerts.add('Your class has been removed!', 'info') 
     Class.remove(this._id)
 

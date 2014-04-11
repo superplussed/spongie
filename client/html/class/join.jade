@@ -1,0 +1,11 @@
+template(name="classJoin")
+  .class-join
+    each availableClasses
+      .class
+        h4=name
+        .buttons
+          if alreadyJoined
+            a.enter.btn.btn-default.btn-small(href="{{pathFor 'classShow' id=this._id}}") Enter
+          else
+            .join.btn.btn-default.btn-small Join
+
