@@ -24,6 +24,7 @@
 * sharedsponge.com
 * groupsponge.com
 * allsponge
+* edg.io
 
 ###Info/Docs
 

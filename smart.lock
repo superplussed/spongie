@@ -16,7 +16,8 @@
       "bootstrap-alerts": {},
       "ace-embed": {},
       "sortable": {},
-      "handlebar-helpers": {}
+      "handlebar-helpers": {},
+      "keybindings": {}
     },
     "packages": {
       "roles": {
@@ -61,8 +62,8 @@
       },
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
-        "tag": "v0.5.2",
-        "commit": "a02539ad73f519ef23303a62f2833f5397fc2959"
+        "tag": "v0.6.1",
+        "commit": "5c0f36950c7ca91e91d4917a1b4209495151bf1b"
       },
       "font-awesome": {
         "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
@@ -93,6 +94,11 @@
         "git": "https://github.com/raix/Meteor-handlebar-helpers.git",
         "tag": "v0.1.1",
         "commit": "0b407ab65e7c1ebd53d71aef0de2e2c1d21a597c"
+      },
+      "keybindings": {
+        "git": "https://github.com/matteodem/meteor-keybindings.git",
+        "tag": "v0.4.1",
+        "commit": "d461475eec435acd8b61af6f1b8696fc70fcea78"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

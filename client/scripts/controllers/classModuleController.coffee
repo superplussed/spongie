@@ -17,6 +17,15 @@ Router.map ->
         Slide.find({moduleId: this.params.moduleId}, {sort: {number: 1}})
 
 
+Template.classModuleShow.rendered = ->
+  Meteor.Keybindings.add
+    '←': -> 
+      slide = Slide.prev(Session.get('currentSlideId'))
+      Session.set('currentSlideId', slide._id) if slide
+    '→': ->
+      slide = Slide.next(Session.get('currentSlideId'))
+      Session.set('currentSlideId', slide._id) if slide
+
 Template.classModuleShow.events = 
   'click .goto-slide': ->
     Session.set('currentSlideId', this._id)
