@@ -13,6 +13,15 @@ Router.map ->
       slides:
         Slide.find({moduleId: this.params.moduleId}, {sort: {number: 1}})
 
+
+Template.classModuleShow.events = 
+  'click .goto-slide': ->
+    Session.set('currentSlideId', this._id)
+
+Template.classModuleShow.currentSlide = ->
+  if Session.get('currentSlideId')
+    Slide.findOne(Session.get('currentSlideId'))  
+
 AutoForm.hooks
   classModuleForm:
     after:

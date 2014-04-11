@@ -7,5 +7,9 @@ template(name="slideBar")
           .bg-circle
       .fg-circles
         each slides
-          .fg-circle
-            =number
+          if $.Session.equals "currentSlideId" _id 
+            a.fg-circle.goto-slide.current
+              =number
+          else
+            a.fg-circle.goto-slide
+              =number
