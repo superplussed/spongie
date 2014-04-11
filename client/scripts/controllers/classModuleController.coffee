@@ -10,6 +10,8 @@ Router.map ->
         Module.findOne(this.params.moduleId)
       moduleId:
         this.params.moduleId
+      slides:
+        Slide.find({moduleId: this.params.moduleId}, {sort: {number: 1}})
 
 AutoForm.hooks
   classModuleForm:

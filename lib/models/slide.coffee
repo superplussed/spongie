@@ -8,6 +8,9 @@
       type: String
       label: "Content"
       optional: true
+    number:
+      type: Number
+      label: "Number"
     code: 
       type: String
       label: "Code"

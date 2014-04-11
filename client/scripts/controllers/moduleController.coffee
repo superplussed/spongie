@@ -14,7 +14,7 @@ Router.map ->
       module:
         Module.findOne(this.params.id)
       slides: 
-        Slide.find({moduleId: this.params.id}).fetch()
+        Slide.find({moduleId: this.params.id}, {sort: {number: 1}}).fetch()
 
 
 Template.moduleShow.rendered = ->

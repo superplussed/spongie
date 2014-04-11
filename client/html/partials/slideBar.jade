@@ -1,0 +1,11 @@
+template(name="slideBar")
+  if slides
+    .slide-bar-wrapper
+      .bar
+      .bg-circles
+        each slides
+          .bg-circle
+      .fg-circles
+        each slides
+          .fg-circle
+            =number
