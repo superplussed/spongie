@@ -1,10 +1,10 @@
 template(name="classModuleShow")
-  a(href="{{pathFor 'classShow' id=classId}}") Return to Class
-
-  h3 {{module.name}}
+  //- a.right(href="{{pathFor 'classShow' id=classId}}") Return to Class
+  h3 
+    {{module.name}}
 
   +slideBar
 
-  article 
+  .slide
     h4 {{currentSlide.name}}
-    {{{currentSlide.content}}}
+    article {{{currentSlide.content}}}
