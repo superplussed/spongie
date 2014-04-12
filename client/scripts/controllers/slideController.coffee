@@ -7,25 +7,7 @@ Router.map ->
 
   @route "slideUpdate",
     path: "/slide/update/:id"
-
-    data: ->
-      _id = @params.id
-      _slide = Slide.findOne(@params.id)
-      module: 
-        Module.findOne(_slide.moduleId) if _slide
-      slide:
-        _slide
-
-Template.slideUpdate.rendered = ->
-  # cssEditor = ace.edit("ace-editor-css")
-  # cssEditor.setTheme("ace/theme/twilight")
-  # cssEditor.getSession().setMode("ace/mode/css")
-  # cssEditor.setHighlightActiveLine(true)
-
-  htmlEditor = ace.edit("ace-editor-html")
-  htmlEditor.setTheme("ace/theme/twilight")
-  htmlEditor.getSession().setMode("ace/mode/xml")
-  htmlEditor.setHighlightActiveLine(true)
+    controller: @SlideUpdateController
 
 AutoForm.hooks
   slideForm:
@@ -41,9 +23,3 @@ AutoForm.hooks
         else
           slide = Slide.findOne(result)
           Alerts.add("Slide '" + slide.name + "' has been created.", 'info')
-          
-      update: (error, result, template) ->
-        if error
-          Alerts.add(error.message , 'info')
-        else
-          Alerts.add("This slide has been updated.", 'info')

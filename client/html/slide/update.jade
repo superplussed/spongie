@@ -9,11 +9,14 @@ template(name="slideUpdate")
         legend Edit Slide 
         +afQuickField name='name'
         +afQuickField name='number'
-        +afQuickField name='content' rows=15
+        +afQuickField name='content' rows=10
         
         .form-group
           label.form-label HTML
           #ace-editor-html.ace-editor
-        //- #ace-editor-css.ace-editor
+
+        .form-group
+          label.form-label CSS
+          #ace-editor-css.ace-editor
 
       button.btn.btn-default.create-module(type="submit") Update Slide
