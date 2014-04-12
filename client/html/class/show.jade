@@ -1,9 +1,9 @@
 template(name="classShow")
-  h3 {{class.name}}  
+  .page-title {{class.name}}  
   article {{{class.description}}}
 
   if classModules
-    h3 Modules
+    .page-title Modules
     .boxes
       each classModules
         .box

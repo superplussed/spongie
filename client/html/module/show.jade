@@ -1,6 +1,6 @@
 template(name="moduleShow")
   //- a.right(href="{{pathFor 'classShow' id=classId}}") Return to Class
-  h3 {{module.name}}
+  .page-title {{module.name}}
 
   +slideBar
 
@@ -11,7 +11,8 @@ template(name="moduleShow")
         article {{{currentSlide.content}}}
       .ace-editor-wrapper
         #ace-editor-html.ace-editor
-        #ace-editor-output.ace-output
+        #ace-editor-output.ace-output {{{currentSlide.html}}}
+        //- .yui3-cssreset {{{currentSlide.html}}}
   else
     #static-slide
       .slide

@@ -23,12 +23,12 @@ class @ModuleShowController extends RouteController
       # window.cssEditor.getSession().setMode("ace/mode/css")
       # window.cssEditor.setValue(this.data.slide.css)
       # window.cssEditor.getSelection().clearSelection()
-
-      # window.htmlEditor = ace.edit("ace-editor-html")
-      # window.htmlEditor.setTheme("ace/theme/twilight")
-      # window.htmlEditor.getSession().setMode("ace/mode/xml")
-      # window.htmlEditor.setValue(this.data.slide.html)
-      # window.htmlEditor.getSelection().clearSelection()
+      if Template.moduleShow.currentSlide()?.html
+        window.htmlEditor = ace.edit("ace-editor-html")
+        window.htmlEditor.setTheme("ace/theme/twilight")
+        window.htmlEditor.getSession().setMode("ace/mode/xml")
+        window.htmlEditor.setValue(Template.moduleShow.currentSlide().html)
+        window.htmlEditor.getSelection().clearSelection()
 
       if _.isEmpty(Meteor.Keybindings._bindings)
         Meteor.Keybindings.add
