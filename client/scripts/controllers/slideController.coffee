@@ -17,7 +17,15 @@ Router.map ->
         _slide
 
 Template.slideUpdate.rendered = ->
-  $('.wysiwyg').wysihtml5();
+  # cssEditor = ace.edit("ace-editor-css")
+  # cssEditor.setTheme("ace/theme/twilight")
+  # cssEditor.getSession().setMode("ace/mode/css")
+  # cssEditor.setHighlightActiveLine(true)
+
+  htmlEditor = ace.edit("ace-editor-html")
+  htmlEditor.setTheme("ace/theme/twilight")
+  htmlEditor.getSession().setMode("ace/mode/xml")
+  htmlEditor.setHighlightActiveLine(true)
 
 AutoForm.hooks
   slideForm:

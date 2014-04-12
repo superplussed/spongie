@@ -12,9 +12,17 @@
       type: Number
       label: "Number"
       optional: true
-    code: 
+    html: 
       type: String
-      label: "Code"
+      label: "HTML"
+      optional: true
+    css: 
+      type: String
+      label: "CSS"
+      optional: true
+    instruction: 
+      type: String
+      label: "Instruction"
       optional: true
     moduleId: 
       type: String
