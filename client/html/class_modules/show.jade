@@ -4,6 +4,16 @@ template(name="classModuleShow")
 
   +slideBar
 
-  .slide
-    h4 {{currentSlide.name}}
-    article {{{currentSlide.content}}}
+  if currentSlide.html
+    #code-editor
+      .slide
+        h4 {{currentSlide.name}}
+        article {{{currentSlide.content}}}
+      .ace-editor-wrapper
+        #ace-editor-html.ace-editor
+        #ace-editor-output.ace-output
+  else
+    #static-slide
+      .slide
+        h4 {{currentSlide.name}}
+        article {{{currentSlide.content}}}

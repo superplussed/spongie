@@ -1,13 +1,7 @@
-Router.map ->
-  @route "slideShow",
-    path: "/slide/:id",
-    data: ->
-      slide:
-        Module.findOne(@params.id)
-
-  @route "slideUpdate",
-    path: "/slide/update/:id"
-    controller: @SlideUpdateController
+class @SlideInsertController extends RouteController
+  data: ->
+    slide:
+      Module.findOne(@params.id)
 
 AutoForm.hooks
   slideForm:

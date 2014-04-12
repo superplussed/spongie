@@ -14,6 +14,14 @@ Router.map ->
 
   @route "terms",
     path: "/terms"
+
+  @route "slideShow",
+    path: "/slide/:id",
+    controller: @SlideInsertController
+
+  @route "slideUpdate",
+    path: "/slide/update/:id"
+    controller: @SlideUpdateController
     
   @route "admin",
     path: "/admin"
