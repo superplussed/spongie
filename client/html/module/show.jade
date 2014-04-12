@@ -1,3 +1,19 @@
 template(name="moduleShow")
-  h3 {{module.name}}  
-  +editor
+  //- a.right(href="{{pathFor 'classShow' id=classId}}") Return to Class
+  h3 {{module.name}}
+
+  +slideBar
+
+  if currentSlide.html
+    #code-editor
+      .slide
+        h4 {{currentSlide.name}}
+        article {{{currentSlide.content}}}
+      .ace-editor-wrapper
+        #ace-editor-html.ace-editor
+        #ace-editor-output.ace-output
+  else
+    #static-slide
+      .slide
+        h4 {{currentSlide.name}}
+        article {{{currentSlide.content}}}

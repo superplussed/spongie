@@ -22,6 +22,10 @@ Router.map ->
   @route "slideUpdate",
     path: "/slide/update/:id"
     controller: @SlideUpdateController
+
+  @route "moduleShow",
+    path: "/class/:classId/module/:moduleId",
+    controller: @ModuleShowController
     
   @route "admin",
     path: "/admin"

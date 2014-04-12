@@ -2,12 +2,6 @@ Router.map ->
   @route "moduleNew",
     path: "/module/new"
 
-  @route "moduleShow",
-    path: "/module/:id",
-    data: ->
-      module:
-        Module.findOne(this.params.id)
-
   @route "moduleUpdate",
     path: "/module/update/:id",
     data: ->
@@ -15,14 +9,6 @@ Router.map ->
         Module.findOne(this.params.id)
       slides: 
         Slide.find({moduleId: this.params.id}, {sort: {number: 1}}).fetch()
-
-
-Template.moduleShow.rendered = ->
-  editor = ace.edit("aceEditor")
-  editor.setTheme "ace/theme/twilight"
-  editor.getSession().setMode "ace/mode/xml"
-  editor.setHighlightActiveLine true
-  return
 
 
 Template.moduleIndex.availableModules = ->
@@ -44,6 +30,15 @@ Template.moduleUpdate.events =
     Alerts.add('Your slide has been removed.', 'info')
 
 
+AutoForm.hooks
+  classModuleForm:
+    after:
+      insert: (error, result, template) ->
+        if error
+          Alerts.add(error.message , 'info')
+        else
+          Alerts.add('This module has been added.', 'info')
+        
 AutoForm.hooks
   moduleForm:
     after:
