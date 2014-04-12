@@ -10,7 +10,7 @@ template(name="moduleShow")
         h4 {{currentSlide.name}}
         article {{{currentSlide.content}}}
       .ace-editor-wrapper
-        #ace-editor-html.ace-editor
+        +aceEditor
         #ace-editor-output.ace-output {{{currentSlide.html}}}
   else
     #static-slide

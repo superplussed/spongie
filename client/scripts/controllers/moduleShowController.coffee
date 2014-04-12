@@ -14,15 +14,8 @@ class @ModuleShowController extends RouteController
   onRun: ->
     slide = Slide.findOne({moduleId: this.params.moduleId, number: 1})
     Session.set('currentSlideId', slide?._id) 
-
-  onBeforeAction: ->
-    console.log("on after")
     
 Template.moduleShow.rendered = ->
-  if Template.moduleShow.currentSlide()?.html
-    window.htmlEditor = new AceEditor "html"
-    window.htmlEditor.update(Template.moduleShow.currentSlide().html)
-
   if _.isEmpty(Meteor.Keybindings._bindings)
     Meteor.Keybindings.add
       '←': (evt) -> 
@@ -40,4 +33,6 @@ Template.moduleShow.events =
 
 Template.moduleShow.currentSlide = ->
   if Session.get('currentSlideId')
-    Slide.findOne(Session.get('currentSlideId')) 
+    slide = Slide.findOne(Session.get('currentSlideId')) 
+    Session.set('html', slide.html)
+    slide
