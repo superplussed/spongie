@@ -38,6 +38,11 @@ Template.moduleIndex.events =
     Session.set('confirmModalMessage', 'Are you sure you want to delete this module?')
     Session.set('deleteModuleId', this._id)
 
+Template.moduleUpdate.events =
+  'click .delete-slide': (event) ->
+    Slide.remove(this._id)
+    Alerts.add('Your slide has been removed.', 'info')
+
 
 AutoForm.hooks
   moduleForm:

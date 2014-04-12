@@ -11,6 +11,7 @@
     number:
       type: Number
       label: "Number"
+      optional: true
     code: 
       type: String
       label: "Code"
@@ -24,6 +25,12 @@
       optional: true
   )
 )
+
+@Slide.lastForModule = (moduleId) ->
+  Slide.findOne({moduleId: moduleId}, {sort: {number: -1}})
+
+@Slide.firstForModule = (moduleId) ->
+  Slide.findOne({moduleId: moduleId, number: 1})
 
 @Slide.next = (id) ->
   slide = Slide.findOne(id)
