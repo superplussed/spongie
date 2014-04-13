@@ -32,11 +32,11 @@ Template.moduleShow.rendered = ->
     Meteor.Keybindings.add
       '←': (evt) -> 
         if slide = Slide.prev(Session.get('currentSlideId'))
+      if slide = Slide.next(Session.get('currentSlideId'))
           Session.set('currentSlideId', slide._id) 
           Template.moduleShow.resetSlide()
       '→': (evt) ->
-        if slide = Slide.next(Session.get('currentSlideId'))
-          Session.set('currentSlideId', slide._id) 
+            Session.set('currentSlideId', slide._id) 
           Template.moduleShow.resetSlide()
 
 
