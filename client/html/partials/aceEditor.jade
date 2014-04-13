@@ -2,9 +2,10 @@ template(name="aceEditor")
   ul.tabs
     li.active.tab.css CSS
     li.tab.html HTML
-    
-  if $.Session.get "css"
-    #ace-editor-css.ace-editor
+  
+  .editors
+    if $.Session.get "css"
+      #ace-editor-css.ace-editor
 
-  if $.Session.get "html"
-    #ace-editor-html.ace-editor(style="visibility:hidden")
+    if $.Session.get "html"
+      #ace-editor-html.ace-editor(style="visibility:hidden")
