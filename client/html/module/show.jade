@@ -14,7 +14,10 @@ template(name="moduleShow")
         article {{{currentSlide.content}}}
       .ace-editor-wrapper
         +aceEditor
-        #ace-editor-output.ace-output {{{$.Session.get "html"}}}
+        #ace-editor-output.ace-output 
+          style(media="screen", type="text/css")
+            {{{$.Session.get "css"}}}  
+          {{{$.Session.get "html"}}}
   else
     #static-slide
       .slide
