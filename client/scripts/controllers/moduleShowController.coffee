@@ -30,9 +30,20 @@ Template.moduleShow.rendered = ->
 Template.moduleShow.events = 
   'click .goto-slide': ->
     Session.set('currentSlideId', this._id)
+  'click .tab.css': ->
+    $(".tab.css").addClass("active")
+    $(".tab.html").removeClass("active")
+    $("#ace-editor-html").css("visibility", "hidden")
+    $("#ace-editor-css").css("visibility", "auto")
+  'click .tab.html': ->
+    $(".tab.css").removeClass("active")
+    $(".tab.html").addClass("active")
+    $("#ace-editor-css").css("visibility", "hidden")
+    $("#ace-editor-html").css("visibility", "auto")
 
 Template.moduleShow.currentSlide = ->
   if Session.get('currentSlideId')
     slide = Slide.findOne(Session.get('currentSlideId')) 
     Session.set('html', slide.html)
+    Session.set('css', slide.css)
     slide

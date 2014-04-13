@@ -3,7 +3,10 @@
   constructor: (type) ->
     @ace = ace.edit("ace-editor-" + type)
     @ace.setTheme("ace/theme/twilight")
-    @ace.getSession().setMode("ace/mode/xml")
+    if type == "html"
+      @ace.getSession().setMode("ace/mode/xml")
+    else
+      @ace.getSession().setMode("ace/mode/" + type)
 
   update: (contents) ->
     @ace.setValue(contents)
