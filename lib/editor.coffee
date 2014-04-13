@@ -1,10 +1,13 @@
-@AceEditor = class AceEditor
+@Editor = class Editor
   
   constructor: (type) ->
-    @editor = ace.edit("ace-editor-" + type)
-    @editor.setTheme("ace/theme/twilight")
-    @editor.getSession().setMode("ace/mode/xml")
+    @ace = ace.edit("ace-editor-" + type)
+    @ace.setTheme("ace/theme/twilight")
+    @ace.getSession().setMode("ace/mode/xml")
 
   update: (contents) ->
-    @editor.setValue(contents)
-    @editor.getSelection().clearSelection()
+    @ace.setValue(contents)
+    @ace.getSelection().clearSelection()
+
+  value: ->
+    @ace.getValue()

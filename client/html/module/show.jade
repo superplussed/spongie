@@ -14,7 +14,7 @@ template(name="moduleShow")
         article {{{currentSlide.content}}}
       .ace-editor-wrapper
         +aceEditor
-        #ace-editor-output.ace-output {{{currentSlide.html}}}
+        #ace-editor-output.ace-output {{{$.Session.get "html"}}}
   else
     #static-slide
       .slide

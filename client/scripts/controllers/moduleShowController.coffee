@@ -19,11 +19,11 @@ Template.moduleShow.rendered = ->
   if _.isEmpty(Meteor.Keybindings._bindings)
     Meteor.Keybindings.add
       '←': (evt) -> 
-        slide = Slide.prev(Session.get('currentSlideId'))
-        Session.set('currentSlideId', slide._id) if slide
+        if slide = Slide.prev(Session.get('currentSlideId'))
+          Session.set('currentSlideId', slide._id) 
       '→': (evt) ->
-        slide = Slide.next(Session.get('currentSlideId'))
-        Session.set('currentSlideId', slide._id) if slide
+        if slide = Slide.next(Session.get('currentSlideId'))
+          Session.set('currentSlideId', slide._id) 
 
 
 
