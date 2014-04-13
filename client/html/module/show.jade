@@ -13,8 +13,15 @@ template(name="moduleShow")
         h4 {{currentSlide.name}}
         article {{{currentSlide.content}}}
       .ace-editor-wrapper
-        +aceEditor
-        #ace-editor-output.ace-output 
+        ul.tabs
+          li.active.tab.css CSS
+          li.tab.html HTML
+        
+        .editors
+          #ace-editor-css.ace-editor
+          #ace-editor-html.ace-editor(style="visibility:hidden")
+
+        #ace-editor-output.ace-output.live-canvas
           style(media="screen", type="text/css")
             {{{$.Session.get "css"}}}  
           {{{$.Session.get "html"}}}
