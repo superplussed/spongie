@@ -1,6 +1,9 @@
 template(name="moduleShow")
-  //- a.right(href="{{pathFor 'classShow' id=classId}}") Return to Class
-  .page-title {{module.name}}
+  .page-title 
+    a(href="{{pathFor 'classShow' id=classId}}") Class Page
+    i.fa.fa-angle-double-right
+    {{module.name}}
+  
 
   +slideBar
 
