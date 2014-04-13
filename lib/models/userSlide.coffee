@@ -1,10 +1,10 @@
-@Slide = new Meteor.Collection("Slide",
+@UserSlide = new Meteor.Collection("UserSlide",
   schema: new SimpleSchema(
     name:
       type: String
       label: "Name"
-      max: 40
     html: 
+      max: 40
       type: String
       label: "HTML"
       optional: true

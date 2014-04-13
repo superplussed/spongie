@@ -1,4 +1,8 @@
 template(name="moduleUpdate")
+  .page-title 
+    a(href="/admin") Admin
+    i.fa.fa-angle-double-right {{module.name}}
+
   section
     +autoForm collection="Module" id="moduleForm" type="update" doc=module
       fieldset
