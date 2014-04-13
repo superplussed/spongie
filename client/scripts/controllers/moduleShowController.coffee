@@ -27,16 +27,16 @@ Template.moduleShow.rendered = ->
   window.cssEditor.ace.on("change", ->
     Session.set('css', window.cssEditor.value())
   )
-
+  Template.moduleShow.resetSlide()
   if _.isEmpty(Meteor.Keybindings._bindings)
     Meteor.Keybindings.add
       '←': (evt) -> 
         if slide = Slide.prev(Session.get('currentSlideId'))
-      if slide = Slide.next(Session.get('currentSlideId'))
           Session.set('currentSlideId', slide._id) 
           Template.moduleShow.resetSlide()
       '→': (evt) ->
-            Session.set('currentSlideId', slide._id) 
+        if slide = Slide.next(Session.get('currentSlideId'))
+          Session.set('currentSlideId', slide._id) 
           Template.moduleShow.resetSlide()
 
 
