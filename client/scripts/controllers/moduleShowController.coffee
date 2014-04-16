@@ -16,7 +16,19 @@ class @ModuleShowController extends RouteController
     slide = Slide.findOne({moduleId: this.params.moduleId, number: 1})
     Session.set('currentSlideId', slide?._id) 
     
+
 Template.moduleShow.rendered = ->
+  if _.isEmpty(Meteor.Keybindings._bindings)
+    Meteor.Keybindings.add
+      '←': (evt) -> 
+        if slide = Slide.prev(Session.get('currentSlideId'))
+          Session.set('currentSlideId', slide._id) 
+          Template.moduleShow.addCodeToEditor()
+      '→': (evt) ->
+        if slide = Slide.next(Session.get('currentSlideId'))
+          Session.set('currentSlideId', slide._id) 
+          Template.moduleShow.addCodeToEditor()
+
   window.htmlEditor = new Editor "html"
   window.htmlEditor.update(Session.get('html'))
   window.htmlEditor.ace.on("change", ->
@@ -27,24 +39,13 @@ Template.moduleShow.rendered = ->
   window.cssEditor.ace.on("change", ->
     Session.set('css', window.cssEditor.value())
   )
-  Template.moduleShow.resetSlide()
-  if _.isEmpty(Meteor.Keybindings._bindings)
-    Meteor.Keybindings.add
-      '←': (evt) -> 
-        if slide = Slide.prev(Session.get('currentSlideId'))
-          Session.set('currentSlideId', slide._id) 
-          Template.moduleShow.resetSlide()
-      '→': (evt) ->
-        if slide = Slide.next(Session.get('currentSlideId'))
-          Session.set('currentSlideId', slide._id) 
-          Template.moduleShow.resetSlide()
-
+  Template.moduleShow.addCodeToEditor()
 
 
 Template.moduleShow.events = 
   'click .goto-slide': ->
     Session.set('currentSlideId', this._id)
-    Template.moduleShow.resetSlide()
+    Template.moduleShow.addCodeToEditor()
   'click .tab.css': ->
     $(".tab.css").addClass("active")
     $(".tab.html").removeClass("active")
@@ -56,11 +57,13 @@ Template.moduleShow.events =
     $("#ace-editor-css").css("visibility", "hidden")
     $("#ace-editor-html").css("visibility", "auto")
 
+
 Template.moduleShow.currentSlide = ->
   if Session.get('currentSlideId')
     Slide.findOne(Session.get('currentSlideId')) 
 
-Template.moduleShow.resetSlide = ->
+
+Template.moduleShow.addCodeToEditor = ->
   slide = Template.moduleShow.currentSlide()
   Session.set('html', slide.html)
   window.htmlEditor.update(slide.html) if window.htmlEditor
