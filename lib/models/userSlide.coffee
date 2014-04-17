@@ -4,7 +4,6 @@
       type: String
       label: "Name"
     html: 
-      max: 40
       type: String
       label: "HTML"
       optional: true

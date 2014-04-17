@@ -15,6 +15,7 @@ class @ModuleShowController extends RouteController
 
   onAfterAction: ->
     console.log "after action"
+    Meteor.user().profile.currentModule = this.data.moduleId
     Session.set('currentSlideId', Slide.findOne({moduleId: this.params.moduleId, number: 1})?._id) 
     Template.moduleShow.rendered = ->
       Meteor.Keybindings.add

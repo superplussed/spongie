@@ -14,5 +14,5 @@ template(name="codeEditor")
 
       #ace-editor-output.ace-output.live-canvas
         style(media="screen", type="text/css")
-          {{{$.Session.get "css"}}}  
-        {{{$.Session.get "html"}}}
+          {{{currentSlide.css}}}  
+        {{{currentSlide.html}}}

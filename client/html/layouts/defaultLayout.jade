@@ -10,10 +10,16 @@ template(name="defaultLayout")
     link(href='http://fonts.googleapis.com/css?family=Quicksand:400,700|Open+Sans:400,700', rel='stylesheet', type='text/css')
 
   body
-    +header
-    #main
-      +bootstrapAlerts
-      +yield
-    +footer
-
-    
+    if userSignedIn
+      #signed-in
+        +leftBar
+        #main
+          +bootstrapAlerts
+          +yield
+    else
+      #signed-out
+        +header
+        #main
+          +bootstrapAlerts
+          +yield
+        +footer

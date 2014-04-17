@@ -1,12 +1,15 @@
-Meteor.subscribe("Class")
-Meteor.subscribe("ClassModule")
-Meteor.subscribe("Module")
-Meteor.subscribe("UserClass")
-Meteor.subscribe("UserModule")
-Meteor.subscribe("Slide")
+Deps.autorun ->
+  Meteor.subscribe "users"
 
-Helpers.addScope('Session', Session)
-Helpers.addScope('Meteor', Meteor)
+Meteor.subscribe "Class"
+Meteor.subscribe "ClassModule"
+Meteor.subscribe "Module"
+Meteor.subscribe "UserClass"
+Meteor.subscribe "UserModule"
+Meteor.subscribe "Slide"
+
+Helpers.addScope 'Session', Session
+Helpers.addScope 'Meteor', Meteor
 
 isAdmin = ->
   Roles.userIsInRole(Meteor.user(), ['admin'])

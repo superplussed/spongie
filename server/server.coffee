@@ -1,3 +1,8 @@
+Meteor.publish null, ->
+  fields = myCustomField: 1
+  Meteor.users.find {},
+    fields: fields
+
 Meteor.publish "Class", ->
   return Class.find()
 
