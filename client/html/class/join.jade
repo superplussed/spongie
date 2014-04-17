@@ -1,16 +1,2 @@
 template(name="classJoin")
-  .class-join
-    each availableClasses
-      .box
-        h4=name
-        if userSignedIn
-          .buttons
-            if alreadyJoined
-              a.enter.btn.btn-default.btn-small(href="{{pathFor 'classShow' id=this._id}}") Enter
-            else
-              .join.btn.btn-default.btn-small Enter
-
-        else
-          .help 
-            i.fa.fa-exclamation-triangle
-            | You must sign in to join this class
+  
