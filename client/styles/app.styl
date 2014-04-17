@@ -4,17 +4,23 @@ body
   background-repeat: repeat-x
   font-family: "Open Sans", "sans-serif"
 
-#signed-in #main
-  margin-left: 200px
-  padding: 0
+#signed-in 
+  #left-bar, #main
+    position: fixed
+    top: 0
+
+  #left-bar
+    width: 200px
+    left: 0
+  #main
+    left: 200px
+    right: 10px
+    top: 20px
 
 #main
   padding 0 40px
   font-size: 17px
   background: white
-  border-radius: 10px
-  width: global-width
-  min-height: 600px
 
 img 
   vertical-align: top
@@ -57,8 +63,6 @@ ul
   margin-bottom: 0
 
 .page-title
-  background: #CCC;
-  padding: 10px;
   font-size: 24px
   margin-bottom: 20px
 
