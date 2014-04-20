@@ -1,12 +1,13 @@
 template(name="classModuleLink")
-  a(href="{{pathFor 'moduleShow' classId=classId moduleId=moduleId}}") 
-    .module
+  .module
+    i.fa.fa-level-up.fa-rotate-90
+    a(href="{{pathFor 'moduleShow' classId=classId moduleId=moduleId}}") 
       {{classModuleName}}
 
 template(name="leftBarClass")
   nav
     a.current(href="{{pathFor 'classShow' id=classId}}")
-      .current-class {{className}}
+      {{className}}
     .modules
       if classModules
         each classModules

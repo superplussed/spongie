@@ -35,8 +35,14 @@ Handlebars.registerHelper 'showAdminLink', ->
 Handlebars.registerHelper 'username', ->
   Meteor.user()?.username
 
+Handlebars.registerHelper 'classModules', -> 
+  ClassModule.find({classId: Session.get 'currentClassId'})
+
 Handlebars.registerHelper 'currentUserId', ->
   Meteor.user()?._id
+
+Handlebars.registerHelper 'currentSlide', ->
+  Slide.findOne(Session.get("currentSlideId"))
 
 Handlebars.registerHelper 'createdByMe', ->
   this.creatorId == Meteor.user()?._id

@@ -2,6 +2,10 @@ class @ModuleShowController extends RouteController
   yieldTemplates:
     'leftBarModule': {to: 'leftBarYield'}
 
+  waitOn: ->  
+    Meteor.subscribe 'Class'
+    Meteor.subscribe 'Module'
+
   data: ->
     class:
       Class.findOne(this.params.classId)
@@ -13,14 +17,8 @@ class @ModuleShowController extends RouteController
       this.params.moduleId
     slides:
       Slide.find({moduleId: this.params.moduleId}, {sort: {number: 1}})
-    currentSlide:
-      Slide.findOne(Session.get('currentSlideId')) if Session.get('currentSlideId')
-    classModules: 
-      ClassModule.find({classId: this.params.classId})
 
   onAfterAction: ->
-    console.log "after action"
-    Meteor.user().profile.currentModule = this.data.moduleId
     Session.set("currentClassId", this.data().classId)
     Session.set("currentModuleId", this.data().moduleId)
     Session.set('currentSlideId', Slide.findOne({moduleId: this.params.moduleId, number: 1})?._id) 
@@ -34,7 +32,6 @@ class @ModuleShowController extends RouteController
             Session.set('currentSlideId', slide._id) 
 
   onStop: ->
-    console.log "on stop"
     Session.set("currentClassId", null)
     Session.set('currentSlideId', null) 
     Meteor.Keybindings.remove(['←', '→'])
