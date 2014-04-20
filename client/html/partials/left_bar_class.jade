@@ -1,0 +1,12 @@
+template(name="classModuleLink")
+  a(href="{{pathFor 'moduleShow' classId=classId moduleId=moduleId}}") 
+    .module
+      {{classModuleName}}
+
+template(name="leftBarClass")
+  .current-class {{className}}
+  .modules
+    if classModules
+      each classModules
+        +classModuleLink
+  .divider
