@@ -1,0 +1,5 @@
+template(name="leftBarModule")
+  nav
+    a(href="{{pathFor 'classShow' id=classId}}") {{className}}
+    a.current(href="{{pathFor 'moduleShow' classId=classId moduleId=moduleId}}") {{moduleName}}
+  .divider

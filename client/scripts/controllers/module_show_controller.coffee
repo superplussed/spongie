@@ -1,4 +1,7 @@
 class @ModuleShowController extends RouteController
+  yieldTemplates:
+    'leftBarModule': {to: 'leftBarYield'}
+
   data: ->
     class:
       Class.findOne(this.params.classId)
@@ -19,6 +22,7 @@ class @ModuleShowController extends RouteController
     console.log "after action"
     Meteor.user().profile.currentModule = this.data.moduleId
     Session.set("currentClassId", this.data().classId)
+    Session.set("currentModuleId", this.data().moduleId)
     Session.set('currentSlideId', Slide.findOne({moduleId: this.params.moduleId, number: 1})?._id) 
     Template.moduleShow.rendered = ->
       Meteor.Keybindings.add

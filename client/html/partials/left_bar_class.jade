@@ -4,9 +4,11 @@ template(name="classModuleLink")
       {{classModuleName}}
 
 template(name="leftBarClass")
-  .current-class {{className}}
-  .modules
-    if classModules
-      each classModules
-        +classModuleLink
+  nav
+    a.current(href="{{pathFor 'classShow' id=classId}}")
+      .current-class {{className}}
+    .modules
+      if classModules
+        each classModules
+          +classModuleLink
   .divider

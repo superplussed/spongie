@@ -22,7 +22,3 @@ class @ClassShowController extends RouteController
 Template.classShow.helpers
   moduleName: ->
     Module.findOne(this.moduleId)?.name
-
-Template.leftBarClass.helpers
-  className: ->
-    Class.findOne(Session.get("currentClassId")).name

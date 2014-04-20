@@ -23,6 +23,12 @@ Handlebars.registerHelper 'userSignedIn', ->
 Handlebars.registerHelper 'isAdmin', ->
   isAdmin()
 
+Handlebars.registerHelper 'className', ->
+  Class.findOne(Session.get("currentClassId")).name
+
+Handlebars.registerHelper 'moduleName', ->
+  Module.findOne(Session.get("currentModuleId")).name
+
 Handlebars.registerHelper 'showAdminLink', ->
   isAdmin() && !adminPage()
 
