@@ -3,7 +3,7 @@ class @ClassIndexController extends RouteController
     class:
       Class.findOne(this.params.id)
     classModules: 
-      ClassModule.find({classId: this.params.id}).fetch()
+      ClassModule.find({classId: this.params.id})
 
 Template.classIndex.helpers
   availableClasses: ->

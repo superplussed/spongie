@@ -1,3 +1,8 @@
+template(name="classModuleLink")
+  a(href="{{pathFor 'moduleShow' classId=classId moduleId=moduleId}}") 
+    .module
+      {{classModuleName}}
+
 template(name="leftBar")
   #left-bar
     .logo-wrapper
@@ -7,7 +12,15 @@ template(name="leftBar")
         | SPONGIE
 
     .divider
+
+    if currentClassName
+      .current-class {{currentClassName}}
+      .modules
+        if classModules
+          each classModules
+            +classModuleLink
     
+      .divider
     .dropdown.user-dropdown
       button#dropdownMenu1.btn.dropdown-toggle(type='button', data-toggle='dropdown')
         =username

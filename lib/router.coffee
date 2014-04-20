@@ -22,7 +22,6 @@ Router.map ->
   @route "classUpdate",
     path: "/class/update/:id",
     
-
   @route "classIndex",
     path: "/class",
     controller: @ClassIndexController

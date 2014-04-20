@@ -1,5 +1,6 @@
 class @HomeController extends RouteController
   onAfterAction: ->
+    Session.set("currentClassid", null)
     Template.home.helpers
       availableClasses: ->
         Class.find().fetch()

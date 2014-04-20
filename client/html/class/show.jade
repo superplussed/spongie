@@ -1,12 +1,4 @@
 template(name="classShow")
-  .page-title {{class.name}}  
   article {{{class.description}}}
 
-  if classModules
-    .page-title Modules
-    .boxes
-      each classModules
-        .box
-          h4=moduleName
-          .buttons
-            a.enter.btn.btn-default.btn-small(href="{{pathFor 'moduleShow' classId=classId moduleId=moduleId}}") Enter
+  

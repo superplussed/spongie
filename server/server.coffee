@@ -21,6 +21,10 @@ Meteor.publish "ClassModule", ->
 Meteor.publish "Slide", ->
   return Slide.find()
 
+Meteor.methods
+  modulesForClass: (classId) ->
+    ids = _.pluck(ClassModule.modulesForClass(classId), "moduleId")
+    Module.find({_id: {$in: ids}}).fetch()
 
 Slide.allow
   insert: ->

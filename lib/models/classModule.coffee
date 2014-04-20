@@ -10,4 +10,4 @@
 )
 
 @ClassModule.modulesForClass = (id) ->
-  ClassModule.find({class_id: id}).fetch()
+  ClassModule.find({classId: id}).fetch()
