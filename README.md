@@ -1,3 +1,12 @@
+teacherAction
+  classId
+  moduleId
+  currentSlideId
+  teacherId
+  maxSlideId
+
+global access to ironrouter params?
+
 ###packages to look at
 
 * https://atmospherejs.com/package/iron-router-progress

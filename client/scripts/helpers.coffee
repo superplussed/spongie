@@ -1,21 +1,8 @@
-Deps.autorun ->
-  Meteor.subscribe "users"
-
-Meteor.subscribe "Class"
-Meteor.subscribe "ClassModule"
-Meteor.subscribe "Module"
-Meteor.subscribe "UserClass"
-Meteor.subscribe "UserModule"
-Meteor.subscribe "Slide"
-
 Helpers.addScope 'Session', Session
 Helpers.addScope 'Meteor', Meteor
 
 isAdmin = ->
   Roles.userIsInRole(Meteor.user(), ['admin'])
-
-adminPage = ->
-  IronLocation.path() == "/admin"
 
 Handlebars.registerHelper 'userSignedIn', ->
   Meteor.user()
@@ -30,7 +17,7 @@ Handlebars.registerHelper 'moduleName', ->
   Module.findOne(Session.get("currentModuleId")).name
 
 Handlebars.registerHelper 'showAdminLink', ->
-  isAdmin() && !adminPage()
+  !adminPage() && IronLocation.path() == "/admin"
 
 Handlebars.registerHelper 'username', ->
   Meteor.user()?.username
