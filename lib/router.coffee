@@ -1,5 +1,5 @@
 Router.configure
-  notFoundTemplate: 'notFound' 
+  notFoundTemplate: 'notFound'
   layoutTemplate: 'defaultLayout'
 
 Router.onBeforeAction ->
@@ -26,7 +26,7 @@ Router.map ->
   @route "moduleShow",
     path: "/class/:classId/module/:moduleId",
     controller: @ModuleShowController
-    
+
   @route "admin",
     path: "/admin"
     onBeforeAction: ->
