@@ -9,11 +9,17 @@ template(name="defaultLayout")
     link(href="favicon.ico", rel="shortcut icon", type="image/x-icon")
     link(href='http://fonts.googleapis.com/css?family=Quicksand:400,700|Open+Sans:400,700', rel='stylesheet', type='text/css')
 
-  body
-    +header
+  body    
+    #left-bar
+      .logo-wrapper
+        a.logo(href='/')
+          img(src="/images/brain.png")
+        a.logo.spongie(href='/')
+          | SPONGIE
+      .divider
+      +yield region="leftBarYield"
+      +userActions
     #main
       +bootstrapAlerts
       +yield
-    +footer
-
-    
+      //- +footer

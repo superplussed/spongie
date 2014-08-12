@@ -34,6 +34,9 @@
   )
 )
 
+@Slide.current = ->
+  Slide.findOne(Session.get("currentSlideId"))
+  
 @Slide.lastForModule = (moduleId) ->
   Slide.findOne({moduleId: moduleId}, {sort: {number: -1}})
 

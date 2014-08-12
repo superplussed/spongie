@@ -1,0 +1,18 @@
+template(name="codeEditor")
+  #code-editor
+    .slide
+      h4 {{currentSlide.name}}
+      article {{{currentSlide.content}}}
+    .ace-editor-wrapper
+      ul.tabs
+        li.active.tab.css CSS
+        li.tab.html HTML
+      
+      .editors
+        #ace-editor-css.ace-editor
+        #ace-editor-html.ace-editor(style="visibility:hidden")
+
+      #ace-editor-output.ace-output.live-canvas
+        style(media="screen", type="text/css")
+          {{{currentSlide.css}}}  
+        {{{currentSlide.html}}}

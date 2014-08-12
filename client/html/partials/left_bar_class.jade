@@ -1,0 +1,15 @@
+template(name="classModuleLink")
+  .module
+    i.fa.fa-level-up.fa-rotate-90
+    a(href="{{pathFor 'moduleShow' classId=classId moduleId=moduleId}}") 
+      {{classModuleName}}
+
+template(name="leftBarClass")
+  nav
+    a.current(href="{{pathFor 'classShow' id=classId}}")
+      {{className}}
+    .modules
+      if classModules
+        each classModules
+          +classModuleLink
+  .divider

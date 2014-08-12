@@ -4,77 +4,84 @@ body
   background-repeat: repeat-x
   font-family: "Open Sans", "sans-serif"
 
-  #main
-    padding 0 40px
-    font-size: 17px
-    background: white
-    border-radius: 10px
-    margin: 10px auto
-    width: global-width
-    min-height: 600px
+#left-bar, #main
+  position: fixed
+  top: 0
 
-  img 
-    vertical-align: top
+#left-bar
+  width: 200px
+  left: 0
+#main
+  left: 200px
+  right: 10px
+  top: 20px
 
-  a 
-    text-decoration: none
-    cursor: pointer
+#main
+  padding 0 40px
+  font-size: 17px
+  background: white
 
-  section
-    margin-bottom: 40px
+img 
+  vertical-align: top
 
-  a:hover 
-    text-decoration: none
+a 
+  color: secondary-color
+  text-decoration: none
+  cursor: pointer
 
-  button, input
-    outline none!important
+section
+  margin-bottom: 40px
 
-  .small-button
-    border-radius: 0
-    padding: 5px 10px;
-    font-size: 12px;
-    line-height: 1.5;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
+a:hover 
+  text-decoration: none
 
-  i 
-    margin-right: 3px
+button, input
+  outline none!important
 
-  ul
-    list-style-type: none!important
-    padding-left: 10px
-    margin-bottom: 0
+.small-button
+  border-radius: 0
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
 
-  .page-title
-    background: #CCC;
-    padding: 10px;
-    font-size: 24px
-    margin-bottom: 20px
+i 
+  margin-right: 3px
 
-    .btn 
-      margin-left: 10px
+ul
+  list-style-type: none!important
+  padding-left: 10px
+  margin-bottom: 0
 
-  .help
-    font-size: 13px
+.page-title
+  font-size: 24px
+  margin-bottom: 20px
 
-  .box
-    position: relative
-    width: 200px;
-    height: 200px;
-    border: 1px solid gray;
-    background: #FAFAFA
-    padding: 20px
-    display: inline-block
-    margin-right: 20px
-    vertical-align: top
-    .buttons
-      position: absolute
-      bottom: 20px
+  .btn 
+    margin-left: 10px
+
+.help
+  font-size: 13px
+
+.box
+  position: relative
+  width: 200px;
+  height: 200px;
+  border: 1px solid gray;
+  background: #FAFAFA
+  padding: 20px
+  display: inline-block
+  margin-right: 20px
+  vertical-align: top
+  .buttons
+    position: absolute
+    bottom: 20px

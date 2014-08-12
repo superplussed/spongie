@@ -1,0 +1,7 @@
+template(name="leftBarModule")
+  nav
+    a(href="{{pathFor 'classShow' id=classId}}") {{className}}
+    .module
+      i.fa.fa-level-up.fa-rotate-90
+      a.current(href="{{pathFor 'moduleShow' classId=classId moduleId=moduleId}}") {{moduleName}}
+  .divider
